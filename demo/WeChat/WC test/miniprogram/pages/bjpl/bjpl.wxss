@@ -1,0 +1,55 @@
+.bjpl-til{
+  background-color: white;
+  width: calc(100% - 20px);
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  height: 40px;
+  border-bottom: 1px #898989 solid;
+  position: fixed; 
+  z-index: 100;
+}
+.bjpl-pl{
+  display: inline-block;
+  height: 100%;
+  line-height: 40px;
+  font-size: 18px;
+  color: orangered;
+  font-weight: 800;
+}
+.bjpl-fb{
+  display: inline-block;
+  float: right;
+  background-color: rgb(64, 238, 29);
+  color: white;
+  font-weight: 600;
+  padding: 4px 10px 4px 10px;
+  margin-top: 5px;
+}
+.bjpl-goods{
+  width: 100%;
+}
+.bjpl-good{
+  display: inline-block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-bottom: 1px #898989 solid;
+  position: relative;
+}
+.bjpl-img{
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  background-color: chartreuse;
+}
+.bjpl-content{
+  display: inline-block;
+  overflow: hidden;
+  width: calc(100% - 2px);
+  height: 100px;
+  border: 1px #989898 solid;
+}
+.bjpl-ifm{
+  position: absolute;
+  left:210px;
+  top:10px;
+}

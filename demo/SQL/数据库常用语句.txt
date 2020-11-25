@@ -1,0 +1,57 @@
+//查询语句
+
+select 
+from 
+where
+
+//排序
+select Top n (几行后面加 percent 百分比)
+where 条件
+order by 列
+asc/desc
+
+//分组
+
+group by having
+
+//比较>,=,<,!=,!>,!<,=>,=<
+
+//匹配like '%_'  not like
+
+//日期 date = '2020-07-21'
+
+//逻辑and or not
+
+//空非空is null ,is not null
+
+//查询结果去重select distinct
+
+//(not)between x and y
+
+//in ,not in 
+
+//exists 条件语句返回true or false
+
+//表名 as 别名 或 表名 别名
+
+//union查询结果合并 select union select
+except 差集 intersect交集
+
+//表连接 inner join(可省略inner)内连接 on
+left join on ,right join on 
+
+// + - * / , ||字符串合并
+
+// "_" : 一个字符  "%" : 任意长度字符串  "[]": 括号范围内的一个字符
+"[^]" : 不在括号范围的一个字符 
+
+//all/any
+
+//函数 abs/ceiling/floor/round/ascii/chr()/concat/varchar/upper/ucase/length/space/replace/rtrim/ltrim/posstr/nullif/date/year/time/second/month/minute/hour/coalesce/decode
+
+//getdate()
+
+//sum/avg/count/min/max
+
+//创建
+unique唯一

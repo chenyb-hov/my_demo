@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "now-get":"../../components/nowget/nowget",
+    "can-get":"../../components/canget/canget"
+  },
+    "component": true
+}
+

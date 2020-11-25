@@ -1,0 +1,21 @@
+虚方法、重写(virtual,override)
+
+JAVA 所有方法默认是virtual
+当调用方法时,系统会去检查类,看所调用的方法是否为虚方法
+如果调用的方法不是虚方法,那么就直接执行该函数,如果是虚方法,就检查对象的实例类.
+在实例类中,如果有override重写函数,则执行该函数,若没有则对它的父类进行检查,直到找到第一个override函数,执行该函数.
+例如 base有一个virtual方法,derived是base的子类,同时override父类的虚方法,,derived1是derived的子类,每天override父类的方法
+Base base = new Derived1() base.虚方法 这打印Derived()方法
+若derived也没有override虚方法则打印的内容是虚方法
+
+委托(delegate)
+
+把它当做一个类
+实例化的时候参数为受委托的方法
+
+
+异步(async,await)
+
+ref out
+改变内存指向,ref运用时需要赋值,out不需要
+

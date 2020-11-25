@@ -1,0 +1,64 @@
+
+/**/
+.lbt{
+  margin: auto;
+  height:120px;
+  background-color: orangered;
+  white-space: nowrap; display: flex
+}
+.lbt-img{
+  background-color: peru;
+  width: 100%;
+  height: 120px;
+  display: inline-block;
+}
+.lbt-img1{
+  background-color: royalblue;
+}
+.lbt-img2{
+  background-color: salmon;
+}
+.lbt-img3{
+  background-color: rgb(188, 21, 230);
+}
+.lbt-img4{
+  background-color: rgb(221, 185, 22);
+}
+.dhl{
+  height:40px;
+  width: 100%;
+}
+.title{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height:20px;
+  line-height: 40px;
+}
+.lika-lqtil{
+  position: relative;
+}
+.lk-wlq{
+  display: inline-block;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+  color: white;
+  position: absolute;
+  left:50px;
+  top:-5px;
+}
+.title-cl{
+  color:orangered;
+  font-size:18px;
+}
+.hr{
+  height: 1px;
+  width: 90%;
+  margin: auto;
+  background-color: #363636;
+}

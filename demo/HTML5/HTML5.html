@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+	<title>123</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	mydom{
+		width:100%;
+		height:100px;		
+		background:#ddddff;
+		display:inline-block;
+	}
+	hr{
+		margin:10px 0;
+	}
+	textarea{
+		width:80%;
+		display:inline-block;
+		margin:0 9%;
+		font-size:24px;
+	}
+	</style>
+</head>
+<body>
+	<mydom></mydom>
+	<textarea rows="10" cols="100"><canvas>画布 <audio>音频 <video>视频 <source>定义多媒体资源置于音频视频元素内部 <embed>嵌入的内容 <track>为诸如 <video> 和 <audio> 元素之类的媒介规定外部文本轨道。 <datalist>定义input可能的值 <keygen>表单密钥对生成器字段 <output>定义不同的输出类型 <article>定义页面独立的内容区域 <aside>定义页面的侧边栏内容 <bdi>允许设置一段文本,使其脱离父元素的文本方向 <command>定义命令按钮,如单选复选按钮 <details>用于描述文档或文档某个部分的细节 <dialog>定义对话框 <summary>包含details元素的标题 <figure>规定独立的流内容 <figcaption>定义figure元素标题 <footer>定义section和document的页脚 <header>定义文档的头部区域 <mark>定义带有记号的文本 <meter>定义度量衡 <nav>定义导航链接的部分 <progress>定义任何类型任务的进度 <ruby>定义ruby注释 <rt>定义字符 <rp>在ruby注释中使用 <section>定义文档的节 <time>定义日期和时间 <wbr>规定在文本的何处适合添加换行符</textarea>
+	<hr/>
+	<textarea rows="8" cols="100">首先获取画布元素 cvs = document.getElementById("canvas") 然后c = cvs.getContext("2d") c.fillStyle更换画笔颜色 c.fillRect(x1,y1,x2,y2)填充矩形 c.moveTo(x1,y1)画路径c.lineTo(x2,y2) c.stroke() c.beginPath() c.arc(左边距,上边距,半径,开始弧度,结束弧度) c.stroke()画⚪ c.font 选择字体 c.fillText写字 stroke描边fill填充 grd=c.createLinearGradient grd.addColorStop渐变色 c.drawImage(元素)把图片放到画布上c.clearRect清空矩形内画布</textarea>
+	<hr/>
+	<textarea rows="3" cols="100">svg<svg><polygon point=""/></svg> svg与canvas的区别:avg是使用XML描述2D图形的语言</textarea>
+	<hr/>
+	<textarea rows="5" cols="100"><math><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow></math>相当于a^2 <math><mrow><mi>A</mi><mo>=</mo><mfenced open="[" close="]"><mtable><mtr><mtd><mi>x</mi></mtd><mtd><mi>y</mi></mtd></mtr><mtr><mtd><mi>z</mi></mtd><mtd><mi>w</mi></mtd></mtr></mtable></mfenced></mrow></math>相当于A=[x y \n z w]</textarea>
+	<hr/>
+	<textarea rows="5" >拖放 被拖元素属性draggable="true" 元素开始拖放执行ondragstart 拖放元素进入某区域ondragover 拖放元素放置ondrop</textarea>
+	<hr/>
+	<textarea rows="5" >地理定位 首先判断浏览器支不支持定位navigator.geolocation  支持的话navigator.geolocation.getCurrentPosition(成功要执行函数,失败要执行的函数) watchPosition() - 返回用户的当前位置，并继续返回用户移动时的更新位置 clearWatch() - 停止 watchPosition() 方法</textarea>
+	<hr/>
+	<textarea rows="5" >video autoplay视频在就绪后马上播放。 controls向用户显示控件，比如播放按钮。 loop当媒介文件完成播放后再次开始播放。 muted 视频的音频输出为静音。 poster视频正在下载时显示的图像，直到用户点击播放按钮。 preload 频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。 </textarea>
+	<hr/>
+	<textarea rows="5" >audio autoplay音频在就绪后马上播放。 controls 向用户显示音频控件（比如播放/暂停按钮）。 loop 当音频结束时重新开始播放。 muted 音频输出为静音。 preload 当网页加载时，音频是否默认被加载以及如何被加载。 </textarea>
+	<hr/>
+	<textarea rows="5" >Input 类型 color 颜色选择 date 日期选择 datetime 日期选择 datetime-local 日期和时间选择 email 邮箱 month 年月选择 number 数字选择 range 滑动条 search 搜索域 tel 电话号码 time 时间选择 url url地址输入 week 周和年</textarea>
+	<hr/>
+	<textarea rows="5" >表单元素 <datalist>和select类似 input的属性list与datalist的id一致 作用相当于搜索引擎 <keygen>规定用于表单的密钥对生成器字段 <output>在form表单里属性oninput定义公式 在output里输出值</textarea>
+	<hr/>
+	<textarea rows="8" >表单属性 autocomplete规定form 或 input 域应该拥有自动完成功能。  novalidate 规定在提交表单时不应该验证 form 或 input 域。 autofocus 页面加载时，域自动地获得焦点 <input>form 规定输入域所属的一个或多个表单。 <input>formaction描述表单提交的url <input>formenctype 描述类型ajax header编码 <input>formmethod定义表单提交的方式 <input>formnovalidate描述表单提交时无需被验证 <input>fortarget指定一共名称或一共关键字来指明表单提交数据接收后的展示 <input>src width height type=image 图像按钮 <input>multiple元素中可选多个值 <input>pattern正则表达式 <input>placeholder 提示 <input>required 不能为空 <input>min max step</textarea>
+	<hr/>
+	<textarea rows="8" >web存储 localStorage和sessionStorage  添加直接.key=value 移除.removeItem(key) 添加或更新 .setItem(key,value) 取数据.getItem(key)  删除所有数据 .clear() 获取某个索引的key .key(index)  转字符串 JSON.stringify(json) str转JSON对象 JSON.parse(str) </textarea>
+	<hr/>
+	<textarea rows="5" >Web SQL var db = openDatabase(数据库名称,版本号,描述文本,数据库大小,创建回调) 打开已存在数据库或者新建数据库  db.transaction(function(tx){tx.executeSql(sql语句)}) 执行sql语句</textarea>
+	<hr/>
+	<textarea rows="5" >应用程序缓存 给html标签添加mainfest="xx.appcache"属性 manifest 文件需要配置正确的 MIME-type，即 "text/cache-manifest"。必须在 web 服务器上进行配置。 manifest 文件分成3部分 1.CACHE MANIFEST首次下载后进行缓存 2.NETWORK需要与服务器的连接，且不会被缓存3.FALLBACK当页面无法访问时的回退页面 #开头注释 浏览器更新缓存要同时更新mainfest文件 </textarea>
+	<hr/>
+	<textarea rows="5" >Web Workers 运行在后台的js,不会影响页面的性能,创建前需要检查浏览器是否支持 无法访问js对象包括dom,window,parent</textarea>
+	<hr/>
+	<textarea rows="5" >Server-Sent事件网页自动获取来自服务器的更新 首先判断浏览器是否支持EventSource 支持的话就var source = new EventSource(serverurl) source.onmessage=function(event){console.log(event.data)}  服务器端 把报文头部设置为 Content-Type: text/event-stream  flush()</textarea>
+	<hr/>
+	<textarea rows="5" >WebSocket 类型ajax  TCP协议 一次握手多次传数据 
+onopen 连接建立时触发 onmessage客户端接收服务端数据时触发 onerror 通信发生错误时触发  onclose连接关闭时触发</textarea>
+	<hr/>
+	<textarea rows="5" >代码规范 文档类型<!DOCTYPE html> 小写元素名 关闭所有HTML元素 小写属性名 属性值加双引号 图片属性加alt(在图片不能显示时代替图片显示) =号前后加空格 代码缩进 注释 样式href引入 小写文件名 </textarea>
+	<script>document.createElement("mydom")
+	</script>
+</body>
+</html>

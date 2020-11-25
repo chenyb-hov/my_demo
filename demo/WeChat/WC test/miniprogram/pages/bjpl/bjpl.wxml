@@ -1,0 +1,17 @@
+<view>
+  <view wx:if="{{fbz}}" style="width:100%;height:100%;position:fixed;background:#999999;opacity:0.3;z-index:1000"></view>
+  <view class = "bjpl-til">
+    <view class="bjpl-pl">评论</view>
+    <view class="bjpl-fb" bindtap="fabu">发布</view>
+  </view>
+  <view style="width:100%;height:41px"></view>
+  <view class="bjpl-goods">
+    <view class = "bjpl-good" wx:for="{{order}}" wx:if="{{item.status}}">
+      <view style="display:inline-block;height:120px">
+        <image class="bjpl-img"></image>
+      </view>
+      <view class="bjpl-ifm">{{item.name}}</view>
+      <textarea class = "bjpl-content" bindblur="writepl" data-gid="{{index}}" placeholder="产品满足你的期待吗?"></textarea>
+    </view>
+  </view>
+</view>

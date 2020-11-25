@@ -1,0 +1,82 @@
+//index.js
+var app = getApp();
+Page({
+  data:{
+    tilcl:true,
+    nownum:0,
+    status:true,
+  },
+  goyy:function(){
+    this.setData({
+      tilcl:true,
+      status:true
+    })
+  },
+  golq:function(){
+    this.setData({
+      tilcl:false,
+      status:false
+    })
+  },
+  goindex:function(){
+    this.setData({
+      nownum:0
+    })
+  },
+  gotj:function(){
+    this.setData({
+      nownum:1
+    })
+  },
+  gomyxx:function(){
+    this.setData({
+      nownum:2
+    })
+  },
+  gomywc:function(){
+    wx.navigateTo({
+      url: '/components/canget/canget',
+    })
+    this.setData({
+      nownum:3
+    })
+  }
+})
+Component({
+  data:{
+    tilcl:true,
+    nownum:0,
+    status:true,
+    counts:0
+  },
+  methods:{
+    main:function(){
+      this.setData({
+        counts:0
+      })
+      for(let i in app.globalData.lika){
+        if(app.globalData.lika[i].hcid=="000001"){
+          this.setData({
+            counts:this.data.counts+=1
+          })
+        }
+      }
+      console.log(this.data.counts)
+    },
+    goyy:function(){
+      this.setData({
+        tilcl:true,
+        status:true
+      })
+    },
+    golq:function(){
+      this.setData({
+        tilcl:false,
+        status:false
+      })
+    },
+  },
+  ready:function(){
+    this.main();
+  }
+})

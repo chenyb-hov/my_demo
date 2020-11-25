@@ -1,0 +1,32 @@
+<view>
+  <view wx:if="{{jsz}}" style="width:100%;height:100%;position:fixed;background:#999999;opacity:0.3;z-index:1000"></view>
+  <view class="shopcart-til">
+    <view class="shopcart-tiltext">shopcart</view>
+    <view class="shopcart-cle" bindtap="clearshopcart">清空</view>
+  </view>
+  <view style="width:100%;height:40px"></view>
+  <view class = "shopcart-hr"><image></image></view>
+  <view class = "shopcart-goods">
+    <view class = "shopcart-good" wx:for="{{items}}" wx:if="{{item.number>0}}">
+      <view class = "shopcart-gimg"></view>
+      <view class = "shopcart-gname">{{item.name}}</view>
+      <view class = "shopcart-gms">{{item.ms}}</view>
+      <view class = "shopcart-gprice">￥{{item.price*item.number}}.00</view>
+      <view class="shopcart-gnum">  
+        <view>
+          <text class="iconfont icon-minus-circle shopcart-greduce" data-id="{{item.id}}" data-up="-1" bindtap="upnum"></text>
+          {{item.number}}
+          <text class = "iconfont icon-add-circle shopcart-greduce shopcart-gadd" data-id="{{item.id}}" data-up="1" bindtap="upnum"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shopcart-k" wx:if="{{numbers==0}}">空空如也</view>
+  <view class="shopcart-may">
+    <view class="shopcart-maybox">
+      <view class="shopcart-sum"><text class="{{summoney==0?'shopcart-zero':''}}">总计: ￥{{summoney}}.00</text></view>
+      <view class="{{summoney>0?'shopcart-js1':'shopcart-js'}}" data-summn="{{summoney}}" bindtap="onjiesuan">结算</view>
+    </view>
+  </view>
+  <view style = "width:100%;height:60px"></view>
+</view>

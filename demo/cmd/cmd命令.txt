@@ -1,0 +1,18 @@
+cd/d d:\文件夹名称  进入D盘某个文件夹
+ipconfig 查询物理地址
+dir /b/s  查询本文件夹下所有文件
+netstat -ano|findstr "80"  查询端口占用情况
+path  查询环境变量
+net user 查询当前用户
+tree 树状显示文件及子文件夹
+win+R  打开cmd快捷键
+ping /? 查看所有ping命令
+nbtstat /? 查看所有nbtstat命令
+netstat /? 查看所有netstat命令
+tracert IP 查出数据从本地机器传输到目标主机所经过的所有途径
+net /? 查看所有net命令
+at 
+ftp 进入ftp  输入help  查询所有ftp命令
+telnet
+
+ping -t -l 65550 ip 死亡之ping(发送大于64K的文件并一直ping就成了死亡之ping)

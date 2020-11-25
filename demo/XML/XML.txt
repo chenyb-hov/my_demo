@@ -1,0 +1,112 @@
+大小写敏感
+必须有关闭标签
+必须有根元素
+属性值加引号
+元素必须被正确的嵌套
+&,< 必须用实体引用代替
+注释用<!-- -->
+空格会被保留
+命名 不能以数字或标点符号开头,不能以xml开头,名称不能包含空格
+元素可扩展
+属性必须加引号 单引号双引号皆可
+避免用属性代替元素
+针对元数据的XML属性 例如id
+通常第一行 版本+编码
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+使用css显示xml
+<?xml-stylesheet type = "text/css" href = "cssfilename"?>
+使用 XSLT 的方法之一是在浏览器显示 XML 文件之前，先把它转换为 HTML
+<?xml-stylesheet type="text/xsl" href="xslfilename"?>
+JS 解析XML文档
+获取XHR对象
+.open(method,xmlfilename,async)
+.send()
+objname= XHR对象.responseXML
+其他方法1.通过微软的 XML 解析器来加载 XML
+var xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+xmlDoc.async="false";
+xmlDoc.load("note.xml");
+2.在 Firefox 及其他浏览器中的 XML 解析器
+var xmlDoc=document.implementation.createDocument("","",null);
+xmlDoc.async="false";
+xmlDoc.load("note.xml");
+把 XML 字符串解析到 XML DOM 对象中（把字符串 txt 载入解析器）
+if (window.DOMParser)
+  {
+  parser=new DOMParser();
+  xmlDoc=parser.parseFromString(txt,"text/xml");
+  }
+else // Internet Explorer
+  {
+  xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+  xmlDoc.async="false";
+  xmlDoc.loadXML(txt);
+  }
+提取xml元素内容
+xmlDoc.getElementsByTagName("元素名")[0].childNodes[0].nodeValue
+使用前缀来避免命名冲突
+<x:元素名> 使用前缀时,前缀空间必须被定义 xmlns:x=""
+为元素定义默认的命名空间可以让我们省去在所有的子元素中使用前缀的工作。
+xmlns="namespaceURI"
+<,&非法字符
+CDATA (未解析)字符数据
+<![CDATA[内容]]>
+放到JS里,解析器会忽略CDATA部分
+XML编码
+如果XML中包含非ASCII字符,且文件保存为没有指定编码的单字节ANSI或ASCII,会得到一个错误
+Windows记事本默认将文件保存为单字节的ANSI或ASCII
+在服务器上存储xml
+存储方式和HTML文件相同,编码ASCII 后缀为.xml
+通过ASP生成XML
+<%response.ContentType="text/xml";response.write()%>一句一句写
+通过PHP生成XML
+<?php header("ContentType:text/xml");echo "<?xml ?>"; echo "<></>" ?>
+从数据库生成XML
+<% response.ContentType = "text/xml" 
+set conn=Server.CreateObject("ADODB.Connection")
+conn.provider = "Micrsoft.Jet.OLEDB.4.0;"
+conn.open server.mappath("/db/database.mdb")
+sql = "select fname,lname from tblGuestBook"
+set rs = conn.Execute(sql)
+response.write()接下来和jsp生成xml类似
+rs.close()
+conn.close()
+XSLT转为XML ASP代码
+<% set xml=Server.CreateObject("Microsoft.XMLDOM")
+xml.async = false
+xml.load(Server.MapPath(xmlname))
+set xsl = Server.CreateObject("Microsoft.XMLDOM")
+xsl.async = false
+xsl.load(Server.MapPath(xslname))
+Response.Write(xml.transformNode(xsl))%>
+通过ASP把XML保存为文件
+<%
+text = "xml语句"
+text = text & "xml语句"
+set xml=Server.CreateObject("Microsoft.XMLDOM")
+xml.async = false
+xml.load(text)
+xml.Save(xmlname)%>
+XML DOM高级
+获取xml元素的值
+txt = xmlDoc.getElementsByTagName(element)[0].childNodes[0].nodeValue;
+获取属性的值
+txt = xmlDoc.getElementsByTagName(element)[0].getAttribute(属性);
+改变元素的值
+x = xmlDoc.getElementsByTagName(element)[0].childNodes[0];
+x.nodeValue = ''
+创建新的属性
+x = xmlDoc.getElementsByTagName(element)[0]
+x.setAttribute(属性,值)
+创建元素
+newel = xmlDoc.createElement(elname)
+newtext = xmlDoc.createTextNode(txtname)
+newel.appendChild(newtext)
+删除元素
+x = xmlDoc.getElementsByTagName(elname)[0]
+x.removeChild(x.childNodes[0])
+XML 数据岛仅兼容IE
+<xml id="xid" src="xmlpath"></xml>在html中使用xml标签
+<table datasrc="#xid">
+<tr><td><span datafld="xml文件内标签"></span></td></tr>
+</table>

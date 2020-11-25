@@ -1,0 +1,286 @@
+<html>
+<head>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+.div1{
+	color:red;
+	font-size:30px;
+}
+._active{
+	color:red
+}
+.fade-enter-active, .fade-leave-active{
+	transition : opacity 2s
+}
+.fade-enter, .fade-leave-to{
+	opacity : 0
+}
+.slide-fade-enter-active{
+	transition : all .3s ease;
+}
+.slide-fade-leave-active{
+	transition : all .8s cubic-bezier(1.0,0.5,0.8,1.0)
+}
+.slide-fade-enter, .slide-fade-leave-to{
+	transform : translateX(10px);
+	opacity : 0
+}
+.bounce-enter-active{
+	animation : bounce-in .5s;
+}
+.bounce-leave-active{
+	animation : bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+	0% {
+		transform : scale(0);
+	}
+	50% {
+		transform : scale(1.5);
+	}
+	100% {
+		transform : scale(1);
+	}
+}
+</style>
+<script src = "https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/vue-router/2.7.0/vue-router.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<div id ="app">
+		<div v-bind:class = "{'div1' : isactive}">{{a}}</div>
+		<div v-for="item in b">{{item}}</div>
+		<button v-on:click = "alerts">点我</button>
+		<div v-bind:class = "isactive ? active : ''">{{revs2}}</div>
+		<input v-model = "c" />
+		<input type = "checkbox" value = "地址" v-model = 'address'/>
+		<input type = "radio" value = "性别" v-model = 'sex'/>
+		<cp hhh="hello"></cp>
+		<cp v-bind:hhh="a"></cp></br>
+		<button-count></button-count></br>
+		<input v-focus/>
+		<div v-runoob = "{color : 'blue',text:'hello vue'}"></div>
+		<router-link to = "/one" @click="consol" active-class = "_active">Go one</router-link>
+		<router-link to = "/two" exact-active-class = "_active">Go two</router-link>
+		<router-view></router-view>
+		</br>
+		<button @click="isshow">切换</button>
+		<transition name = "fade">
+			<p v-show = "show" v-bind:style = "styleobj">动画1</p>
+		</transition>
+		</br>
+		<transition name= "slide-fade">
+			<p v-if = "show">动画2</p>
+		</transition>
+		</br>
+		<transition name = "bounce">
+			<p v-if = "show">动画3</p>
+		</transition>
+		</br>
+		<transition name = "custom-classes-transition"
+			enter-active-class = "animated tada"
+			leave-active-class = "animated bounceOutRight"
+		>
+			<p v-if = "show">动画4</p>
+		</transition>
+		</br>
+		<transition v-on:before-enter = "beforeEnter"
+			v-on:enter = "enter"
+			v-on:leave = "leave"
+			v-bind:css = "false"
+		>
+			<p v-if = "show">动画5</p>
+		</transition>
+		</br>
+		<div>{{info}}</div>
+		<button v-on:click="products.id++">come on</button>
+	</div>
+</head>
+<body>
+<script>
+	/*Vue.component('cp',{
+		props : ['hhh'],
+		template : '<h1>{{hhh}}</h1>'
+	})*/
+
+	var myproduct = {"id":1,name:"book","price":20.0}
+	var myMixin = {
+		created : function(){
+			this.startmixin();
+			var myOption = this.$options.myOption;
+			if(myOption){
+				document.write(myOption)
+			}
+		},
+		methods : {
+			startmixin : function(){
+				document.write("混入实例");
+			}
+		}
+	};
+	var Component = Vue.extend({
+		mixins : [myMixin],
+		myOption : "hhhh"
+	})
+	var component = new Component();
+	const one = {template : '<div>one</div>'}
+	const two = {template : '<div>two</div>'}
+	const routes = [
+		{
+			path : '/one',component:one
+		},
+		{
+			path : '/two',component:two
+		}
+	]
+
+	const router = new VueRouter({
+		routes
+	})
+
+	var buttoncounter = {
+		count : 0
+	}
+
+	Vue.component('button-count',{
+		/*data : function(){
+			return{
+				count:0
+			}
+		},*/
+		data : function(){
+			return buttoncounter;
+		},
+		template : '<button v-on:click = "count++">{{count}}</button>'  
+	})
+	
+	/*Vue.directive("focus",{
+		inserted : function (el){
+			el.focus()
+		}
+	})*/
+
+	var app = new Vue({
+		el:"#app",
+		created:function (){
+			document.write("组件调用");
+		},
+		data:{
+			"isactive" : true,
+			a : 12345,
+			b : ["z","xc","v","b","n","m"],
+			"active":'div1',
+			'c' : 130123013,
+			'sex' : 'w',
+			'address' : 'China',
+			show : true,
+			styleobj : {
+				fontSize : '30px',
+				color : 'red'
+			},
+			products:myproduct,
+			info : null,
+			counters:1
+		},
+		methods:{
+			alerts : function (){
+				/*axios.get('https://www.runoob.com/try/ajax/json_demo.json').then(response => (this.info = response)).catch(function (error){console.log(error);
+				})*/
+				$.ajax({
+					type:"get",					url:"https://www.runoob.com/try/ajax/json_demo.json",
+	dataType:"jsonp",
+	jsonpCallback:"axs",
+	success:function(res){this.info = res}
+				})
+				alert("这是一个弹窗!");
+			},
+			revs:function(){
+				//console.log(this.b.reverse());
+				return this.b.reverse().join("");
+			},
+			consol : function(){
+				alert(1)
+				console.log(this.router.push())
+			},
+			isshow : function(){
+				this.show = !this.show
+			},
+			beforeEnter : function(el){
+				el.style.opacity = 0;
+				el.style.transformOrigin = 'left'	
+			},
+			enter : function (el,done){
+				Velocity(el,{opacity : 1,fontSize : '1.4em'},{duration : 300})
+				Velocity(el,{fontSize: '1em'},{complete:done})
+			},
+			leave : function(el,done){
+				Velocity(el,{translateX:'15px',rotateZ : '50deg'},{duration:600})
+				Velocity(el,{rotateZ : '100deg'},{loop:2})	
+				Velocity(el,{rotateZ : '45deg',
+					translateY : '30px',
+					translateX : '30px',
+					opacity : 0 
+				},{ complete : done})
+			},
+			//执行多个并发请求
+			//axios.spread(callback)
+			//默认get
+			//axios.all(iterable)
+			//请求拦截器 axios.interceptors.request.use(function)
+			axiosall : function(){
+				axios.all([getUserAccount(), getUserPermissions()])
+ 			 	.then(axios.spread(function (acct, perms) {
+    				// 两个请求现在都执行完成
+  				}));
+			}
+			
+		},
+		filter:{
+			
+		},
+		computed:{
+			revs2:function(){
+				return this.b.reverse().join("");
+			}
+		},
+		directives : {
+			focus : {
+				inserted : function(el){
+					el.focus()
+				}
+			},
+			runoob : {
+				inserted : function(el,binding){
+					el.innerHTML = binding.value.text
+					el.style.color = binding.value.color
+				}
+			}
+		},
+		router,
+		mounted(){
+			
+		}
+	})
+	app.$watch('counters',function(nval,oval){
+		alert(oval+"---"+nval)
+	})
+	app.$watch('products.id',function(nval,oval){
+		alert(oval+"---"+nval)
+	})
+	//可set get
+	Vue.set(myproduct,'qty',1)
+	Vue.delete(myproduct,'price')
+	console.log(app.products)
+	setTimeout(
+		function(){
+			app.counters+=10
+		},1000
+	)
+</script>
+</body>
+</html>

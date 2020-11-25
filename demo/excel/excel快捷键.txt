@@ -1,0 +1,36 @@
+ctrl + A 全选
+ctrl + C 复制
+ctrl + V 粘贴
+ctrl + X 剪切
+ctrl + D 复制或替换上面一格数据到下面
+ctrl + R 同上方向左到右
+ctrl + F 打开查找 shift+F5
+ctrl + H 打开替换
+ctrl + K 插入超链接
+ctrl + P 打开打印
+ctrl + Z 返回上一步操作
+ctrl + Q 打开快速分析
+ctrl + S 保存
+ctrl + T 打开创建表
+ctrl + 0 隐藏单元格所在的列
+ctrl + 9 隐藏单元格所在的行 +shift 显示
+ctrl + 1 打开设置单元格格式
+ctrl + - 删除选定的行或列
+ctrl + ; 单元格输入系统当前日期
+ctrl + ↓ 光标移动到连续数据的最后一行或者有数据的下一行
+ctrl + ← 同上
+ctrl + → 同上
+ctrl + ↑ 同上
+ctrl + shift + * 选择非空单元格区域
+ctrl + shift + o 选定所有带批注的单元格
+ctrl + shift + ; 单元格内输入当前时间
+F1 帮助对话框
+F2 单元格切换到编辑状态
+F12 另存为 alt + F2
+shift + F2 批注
+alt + F4 关闭
+alt + = 多行多列求和
+alt + enter 对内容强制换行
+delete 删除指定单元格数据
+enter 完成单元格输入
+ALTER + F11 打开VB编辑器

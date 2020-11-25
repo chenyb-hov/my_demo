@@ -1,0 +1,30 @@
+<view class="container">
+  <view class = "my-header">
+    <image class="my-headpic" src="{{avatarUrl}}" style="width:70px;height:70px"></image>
+    <view class="my-name">{{nickName}}</view>
+  </view>
+  <view class = "my-hr"></view>
+  <view class="my-ifmt" bindtap="gomyinfm">
+    <text class="iconfont icon-idcard my-ifmticon"></text><text class="my-ifmttil">信息</text>
+  </view>
+  <view class = "my-hr"></view>
+  <view class="my-othermk">
+    <view class = "my-lk" bindtap="gokabao">
+      <text class="iconfont icon-shouye my-iconfont"></text>
+      <text>卡包</text>
+    </view>
+    <view class="my-lk my-sc" bindtap="goCollection">
+      <text class="iconfont icon-favorite my-iconfont"></text>
+      <text>收藏</text>
+    </view>
+    <view class="my-lk my-gmjl" bindtap="goorder">
+      <text class="iconfont icon-icon-test my-iconfont"></text>
+      <text>购物记录</text>
+    </view>
+    <view class="my-lk my-pl" bindtap="gocomment">
+      <text class="iconfont icon-edit-square my-iconfont"></text>
+      <text>评论</text>
+    </view>
+  </view>
+  <view class = "my-hr"></view>
+</view>

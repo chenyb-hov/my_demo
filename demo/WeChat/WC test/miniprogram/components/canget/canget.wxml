@@ -1,0 +1,13 @@
+<view>
+  <view class="cgtitle">can get</view>
+  <view class="cgcontent">
+    <view class = "cglist" wx:for="{{lika}}">
+      <view class="cgimg"></view>
+      <view class="cgye">余额: {{item.money}}.00</view>
+      <view class= "cgcz">
+        <view class = "cgth" bindtap="goth" data-th="{{item.id}}">退还</view>
+        <view class="cglq" bindtap="golq" data-lq="{{item.id}}">领取</view>
+      </view>
+    </view>
+  </view>
+</view>

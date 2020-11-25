@@ -1,0 +1,46 @@
+.collection-til{
+  width: calc(100% - 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 800;
+  color: orangered;
+  font-size: 18px;
+  border-bottom: 1px #999999 solid;
+}
+.collection-content{
+  width: 100%;
+  border-top: 1px #999999 solid;
+}
+.collection-good{
+  display: inline-block;
+  border-bottom: 1px #999999 solid;
+  width: calc(100% - 20px);
+  padding: 10px;
+  height: 120px;
+  position: relative;
+}
+.good-img{
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  background-color: orange;
+}
+.good-name{
+  display: inline-block;
+  color: orangered;
+  font-size: 18px;
+  font-weight: 800;
+  position: absolute;
+  left: 220px;
+  top:20px;
+}
+.good-ms{
+  position: absolute;
+  display: inline-block;
+  color: #888888;
+  font-size: 14px;
+  left: 220px;
+  top:60px;
+}

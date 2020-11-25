@@ -1,0 +1,23 @@
+<view style="width:100%;height:100%;background:#dfdfdf">
+  <view class= "infm-header">
+    <image class="infm-img" src="{{img}}"></image>
+    <view class = "infm-name"><text>昵称 : {{name}}</text></view>  
+  </view>
+  <view class="infm-hr"></view>
+  <view class="infm-div"><text class="infm-text">性别 : {{gender}}</text></view>
+  <view class="infm-hr"></view>
+  <view class="infm-div"><text class="infm-text">国家 : {{country}}</text></view>
+  <view class="infm-hr"></view>
+  <view class="infm-div"><text class="infm-text">省份 : {{province}}</text></view>
+  <view class="infm-hr"></view>
+  <view class="infm-div"><text class="infm-text">城市 : {{city}}</text></view>
+  <view class="infm-hr"></view>
+  <view class="infm-div">
+    <text class="infm-text">收货地址 : </text>
+    <picker class="infm-address" bindchange="seladdress" value="{{addressindex}}" range="{{address}}">
+      <view>{{address[addressindex]}}</view>
+    </picker>
+  <view class="infm-hr"></view>
+  </view>
+  <view class="infm-hr"></view>
+</view>

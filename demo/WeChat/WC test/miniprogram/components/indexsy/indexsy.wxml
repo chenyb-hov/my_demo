@@ -1,0 +1,23 @@
+<view class="container">
+  <view style="position:fixed;width:100%;background:white;z-index:100">
+    <scroll-view class = "lbt" scroll-x="true">
+      <view class="lbt-img"></view>
+      <view class="lbt-img lbt-img1"></view>
+      <view class="lbt-img lbt-img2"></view>
+      <view class="lbt-img lbt-img3"></view>
+      <view class="lbt-img lbt-img4"></view>
+    </scroll-view>
+    <view class="dhl">
+      <view class="title" bindtap="goyy">
+        <text class="{{tilcl?'title-cl':''}}">已拥有</text>
+      </view>
+      <view class="title" bindtap="golq">
+        <text class="{{tilcl?'':'title-cl'}}"><text class="lika-lqtil">未领取<text class="lk-wlq" wx:if="{{counts>0}}">{{counts}}</text></text></text>
+      </view>
+    </view>
+    <view class="hr"></view>
+  </view>
+  <view style="width:100%;height:161px;"></view>
+  <can-get style="display:inline-block;width:100%" bind:lqlkparentEvent="main" bind:lqthparentEvent="main" wx:if="{{!status}}"></can-get>
+  <now-get wx:if="{{status}}" style="width:100%"></now-get>
+</view>

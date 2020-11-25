@@ -1,0 +1,62 @@
+@import "../../app.wxss";
+.my-header{
+  width: 100%;
+  height:90px;
+  position: relative;
+}
+.my-headpic{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.my-name{
+  position: absolute;
+  display: inline-block;
+  left:90px;
+  top:20px;
+  font-size:20px;
+}
+.my-hr{
+  background-color: #666666;
+  width: 100%;
+  height: 1px;
+}
+.my-ifmt{
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+
+  color:#666666;
+  position: relative;
+}
+.my-ifmticon{
+  line-height: 40px;
+  font-size:30px;
+  margin-left: 10px;
+}
+.my-ifmttil{
+  font-size: 18px;
+  position: absolute;
+  left:40px;
+  top:8px;
+  color:black;
+  margin-left: 5px;
+}
+.my-othermk{
+  width: 100%;
+}
+.my-lk{
+  display: inline-block;
+  width: calc(100% / 3 - 1px);
+  border-bottom: 1px solid #777777;
+  border-right: 1px solid #777777;
+  text-align: center;
+  height: 100px;
+}
+.my-iconfont{
+  display: inline-block;
+  width: 100%;
+  font-size: 60px;
+  margin-top: 6px;
+}

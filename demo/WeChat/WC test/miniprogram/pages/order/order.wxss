@@ -1,0 +1,64 @@
+.order-til{
+  width: calc(100% - 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 800;
+  color: orangered;
+  font-size: 18px;
+  border-bottom: 1px #999999 solid;
+}
+.order-content{
+  width: 100%;
+}
+.order{
+  width: calc(100% - 20px);
+  padding: 10px;
+  display: inline-block;
+  border-bottom: 1px #999999 solid;
+}
+.order-img{
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  background-color: turquoise;
+}
+.order-name{
+  display: inline-block;
+  position: absolute;
+  font-size: 18px;
+  font-weight: 700;
+  color: orange;
+  top:20px;
+  left:220px;
+}
+.order-money{
+  display: inline-block;
+  font-size: 18px;
+  color: orangered;
+  position: absolute;
+  top:90px;
+  left:220px;
+}
+.order-num{
+  display: inline-block;
+  font-size: 14px;
+  color: #888888;
+  position: absolute;
+  top:70px;
+  left:220px;
+}
+.order-moneys{
+  float:right;
+  display: inline-block;
+  color: orangered;
+  font-size: 18px;
+}
+.order-comment{
+  display: inline-block;
+  float: right;
+  font-size: 18px;
+  color: orangered;
+  line-height: 20px;
+}

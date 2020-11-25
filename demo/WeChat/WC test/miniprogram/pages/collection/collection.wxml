@@ -1,0 +1,11 @@
+<view>
+  <view class="collection-til" style="position:fixed;background:white;z-index:100">收藏</view>
+  <view style="width:100%;height:41px"></view>
+  <view class="collection-content">
+    <view class="collection-good" bindtap="gogood" wx:for="{{items}}" data-goodid="{{item.id}}">
+      <view class="good-img"></view>
+      <view class="good-name">{{item.name}}</view>
+      <view class="good-ms">{{item.ms}}</view>
+    </view>
+  </view>
+</view>

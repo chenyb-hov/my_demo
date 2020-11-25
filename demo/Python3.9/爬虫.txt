@@ -1,0 +1,20 @@
+https://blog.csdn.net/u014044812/article/details/78894108
+https://www.liaoxuefeng.com/wiki/1016959663602400
+
+https://blog.csdn.net/nzjdsds/article/details/77506254?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight
+
+https://yiyele.blog.csdn.net/article/details/80605909?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.edu_weight
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+打包exe
+pyinstaller -F .\文件
+
+virtualenv
+
+virtualenv myenv
+cd myenv
+pip list
+python
+exit()
+python myvirtual.py

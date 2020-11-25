@@ -1,0 +1,1328 @@
+<html>
+<head>
+	<style>
+	</style>
+</head>
+<body>
+	
+	<template>
+		<div>123</div>
+		<input type='button' id = "button"/>
+	</template>
+	<script>
+		/*var a = 2;
+		{
+			let a =3;
+			console.log(a)
+		}
+		console.log(a)
+		console.log("------------")
+		for(var i =0;i<10;i++){
+			setTimeout(function(){
+				console.log(i)
+			})
+		}
+		for(let i = 0;i<10;i++){
+			setTimeout(function(){
+				console.log(i)
+			})
+		}
+		console.log("------------")
+		var PI="3.14"
+		if(true){
+			console.log(PI)
+			//const PI = "3.14159"
+			//let PI = "3.1415"
+		}
+		console.log("------------")*/
+		/*let [a,b,c] = [1,2,3]
+		console.log(a,b,c)
+		let [d,[[e],f]] = [4,[[5],6]]
+		console.log(d,e,f)
+		let [g,,i] = [7,8,9]
+		console.log(g,i)
+		let [j = 1,k]=[]
+		console.log(j,k)
+		let [l,...m] = [10,11,12,13]
+		console.log(l,m)
+		let [n,o,p,q,r] = 'hello'
+		console.log(n,o,p,q,r)
+		let [s = 1]=[undefined]
+		console.log(s)
+		let [t = 0,u=t]=[1,2]
+		console.log(t,u)*/
+		/*let {foo,bar} = {foo:'qwe',bar:'asd'}
+		console.log(foo,bar)
+		let {baz:faa} = {baz:'zxc'}
+		console.log(faa)
+		let obj = {p:['hello',{q:'world'}]}
+		console.log(obj)
+		let {p:[x,{q}]} = obj
+		console.log(x,q)
+		let {aa,bb,...rest} = {aa:1,bb:2,cc:3,dd:4,ee:5}
+		console.log(rest)
+		let {ff:fff=6,gg:ggg=7}={ff:8}
+		console.log(fff,ggg)*/
+		/*let sy = Symbol("AA")
+		console.log(sy)
+		console.log(typeof(sy))
+		console.log(typeof("AA"))
+		let sy1 = Symbol("AA")
+		console.log(sy===sy1)
+		let xx = Symbol("kk")
+		let syobj = {[xx]:"ll"}
+		console.log(syobj)
+		let syobj1 = {}
+		Object.defineProperty(syobj1,xx,{value:'ll'})
+		console.log(syobj1)
+		let syobj2 =  {}
+		syobj2[sy] = "TT"
+		console.log(syobj2)
+		for(let i in syobj2){
+			console.log(i)
+		}
+		console.log(Object.keys(syobj2))
+		console.log(Object.getOwnPropertySymbols(syobj2))
+		console.log(Reflect.ownKeys(syobj2))
+		let yellow = Symbol("yellow")
+		let yellow1 = Symbol.for("yellow")
+		console.log(yellow===yellow1)
+		let yellow2= Symbol.for("yellow")
+		console.log(yellow1===yellow2)
+		console.log(Symbol.keyFor(yellow1))*/
+		/*var mymap = new Map()
+		var key = "string"
+		mymap.set(key,"123")
+		console.log(mymap.get(key))
+		console.log(mymap.get('string'))
+		var keyobj = {}
+		mymap.set(keyobj,"234")
+		console.log(mymap.get(keyobj))
+		console.log(mymap.get({}))
+		var keyfun = function(){}
+		mymap.set(keyfun,"345")
+		console.log(mymap.get(keyfun))
+		console.log(mymap.get(function(){}))
+		mymap.set(NaN,'456')
+		console.log(mymap.get(NaN))
+		console.log(mymap.get(Number("app")))
+		var mymap1 = new Map()
+		mymap1.set(0,'zero')
+		mymap1.set(1,'one')
+		for(var [key,value] of mymap1){
+			console.log(key+'='+value)
+		}
+		for(var [key,value] of mymap1.entries()){
+			console.log(key+'='+value)
+		}
+		for(var key of mymap1.keys()){
+			console.log(key)
+		}
+		for(var value of mymap1.values()){
+			console.log(value);
+		}
+		mymap1.forEach(function(value,key){
+			console.log(key+'='+value)
+		},mymap1)
+		var array = [["key1","value1"],["key2","value2"]]
+		var mymap2 = new Map(array)
+		var outarray = Array.from(mymap2)
+		console.log(mymap2)
+		console.log(outarray)
+		var mymap3= new Map(mymap2)
+		//console.log(original === clone)
+		var mymap4 = new Map([['key3','value3']])
+		console.log(new Map([...mymap2,...mymap4]))
+		let myset = new Set()
+		myset.add(1)
+		myset.add(5)
+		myset.add("x")
+		var obj1 = {t:7,v:9}
+		myset.add(obj1)
+		console.log(myset)
+		var myarray = [...myset]
+		console.log(myarray)
+		var myset1 = new Set('hhh')
+		console.log(myset1)
+		var myset2 = new Set([1,1,2,3])
+		
+		console.log([...myset2])
+		var myset3 = new Set([2,4,5])
+		var myset4 = new Set([...myset2,...myset3])
+		console.log(myset4)
+		var myset5 = new Set([4,5,7])
+		var myset6 = new Set([...myset4].filter(x=>myset5.has(x)))
+		console.log(myset6)
+		var myset7 = new Set([7,9,10])
+		var myset8 = new Set([...myset7].filter(x=>!myset5.has(x)))
+		console.log(myset8)*/
+		
+		/*let target = {name:'wxc',age:18}
+		let handler= {get:function(target,key){
+			console.log('getting'+key)
+			return target[key]
+		},
+		set:function(target,key,value){
+			console.log('setting'+key)
+			target[key] = value	
+		}}
+		let proxy = new Proxy(target,handler)
+		console.log(proxy.name)
+		proxy.age = 20
+		console.log(proxy.age)
+		console.log('------')
+		let targetEpt = {}
+		let proxyEpt = new Proxy(targetEpt,handler)
+		console.log(proxyEpt.name)
+		proxyEpt.name='tom'
+		console.log(proxyEpt.name)
+		console.log(targetEpt)
+		let targetEmpty = {}
+		let proxyEmpty = new Proxy(targetEmpty,{})
+		proxyEmpty.name = "Jan"
+		console.log(targetEmpty)
+		
+		let exam ={
+			name:'mak',
+			age:22
+		}
+		let proxy1 = new Proxy(exam,{
+			get(target,propKey,receiver){
+				console.log('getting'+propKey)
+				return target[propKey]
+			}
+		})
+		console.log(proxy1.name)
+		let proxy2 = new Proxy({},{
+			get(target,propKey,receiver){
+				if(propKey[0]==='_'){
+					throw new Error('Invalid ....')
+				}
+				console.log('getting'+propKey)
+				return target[propKey]
+			}
+		})
+		let obj =Object.create(proxy2)
+		//console.log(obj._name)
+		let validator = {set:function(obj,prop,value){
+			if(prop === 'age'){
+				if(!Number.isInteger(value)){
+					throw new TypeError('1')
+				}
+				if(value>200){
+					throw new RangeError('2')
+				}
+			}
+			obj[prop] = value
+		}}
+		let proxy3 = new Proxy({},validator)
+		proxy3.age=100
+		console.log(proxy3.age)
+		//proxy3.age='asd'
+		//proxy3.age=201
+		const handler1= {set:function(obj,prop,value,receiver){
+			obj[prop] = receiver
+		}}
+		const proxy4 = new Proxy({},handler1)
+		proxy4.name = "hh"
+		console.log(proxy4===proxy4.name)
+		const exam1 = {}
+		Object.setPrototypeOf(exam1,proxy4)
+		exam1.name = "oo"
+		console.log(exam1.name===exam1,exam1)
+		const cat = {}
+		cat.name="act"
+		console.log(cat)
+		function sub(a,b){
+			return a-b
+		}
+		nums = [3.1,3.3,2.3]
+		console.log(nums.sort(sub))
+		let handler2 = {apply:function(target,ctx,args){
+			console.log('apply')
+			return Reflect.apply(...arguments)
+		}}
+		let proxy5 = new Proxy(sub,handler2)
+		console.log(proxy5(3,5))
+		let handler3= {has:function(target,propKey){
+			console.log("has")
+			return propKey in target
+		}}
+		exam2 = {name:"exam2"}
+		let proxy6 = new Proxy(exam2,handler3)
+		console.log('name' in proxy6)
+		let handler4 = {construct:function(target,args,newTarget){
+			console.log('construct')
+			return Reflect.construct(target,args,newTarget)
+		}}
+		class Exam{
+			constructor(name){
+				this.name = name
+			}
+		}
+		let Examproxy = new Proxy(Exam,handler4)
+		let proxyObj = new Examproxy('pj')
+		console.log(proxyObj)*/
+		/*let handler5 = {defineProperty:function(target,propKey,propDesc){
+			console.log("difineProperty")
+			return false
+		}}
+		let target4 = {}
+		let proxy7 = new Proxy(target4,handler5)
+		proxy7.name = "proxy7"
+		console.log(target4)
+		let handler6 = {getOwnPerpertyDescriptor:function(target,propKey){
+			return Object.getOwnPropertyDescriptor(target,propKey)
+		}}
+		let target5 = {name:"target5"}
+		let proxy8 = new Proxy(target5,handler6)
+		console.log(Object.getOwnPropertyDescriptor(proxy8,'name'))
+		let exam3 = {}
+		let proxy9 = new Proxy({},{
+			getPrototypeOf:function(target){
+				return exam3
+			}
+		})
+		console.log(Object.getPrototypeOf(proxy9))
+		let proxy10= new Proxy({},{
+			getPrototypeOf:function(target){
+				return true
+			}
+		})
+		//console.log(Object.getPrototypeOf(proxy10))
+		console.log(Object.isExtensible(proxy10))
+		let proxy11 = new Proxy({},{
+			isExtensible:function(target){
+				return false
+			}
+		})
+		//console.log(Object.isExtensible(proxy11))
+		let proxy12 = new Proxy({
+			name:'proxy12',
+			age:12
+		},{
+			ownKey(target){
+				return ['name']
+			}
+		})
+		console.log(Object.keys(proxy12))
+		let target10 = {name:'target10',
+			[Symbol.for('age')]:10
+		}
+		Object.defineProperty(target10,'gender',{
+			enumerable:false,
+			configurable:true,
+			writable:true,
+			value:'male'
+		})
+		let handler10 = {
+			ownKeys(target10){
+				return ['name','parent',Symbol.for('age'),'gender']
+			}
+		}
+		let proxy13 = new Proxy(target10,handler10)
+		console.log(Object.keys(proxy13))
+		var proxy14 = new Proxy({},{
+			preventExtensions:function(target){
+				return true
+			}
+		})
+		//console.log(Object.preventExtensions(proxy14))
+		var proxy15 = new Proxy({},{
+			preventExtensions:function(target){
+				Object.preventExtensions(target)
+				return true
+			}
+		})
+		console.log(Object.preventExtensions(proxy15))
+		let proto = {}
+		let proxy16 = new Proxy(function(){},{
+			setPrototypeOf:function(target,proto){
+				console.log("setPrototypeOf")
+				return true
+			}
+		})
+		console.log(Object.setPrototypeOf(proxy16,proto))
+		let {proxy,revoke} = Proxy.revocable({},{})
+		proxy.name = "proxy17"
+		console.log(proxy.name)
+		revoke()
+		//console.log(proxy.name)
+		let exam11 = {name:'exam11',
+			age:11,
+			get info(){
+				return this.name+this.age
+			}
+		}
+		console.log(Reflect.get(exam11,'name'))
+		let receiver2={
+			name:'receiver2',
+			age:'22'
+		}
+		console.log(Reflect.get(exam11,'info',receiver2))
+		console.log(Reflect.get(exam11,'psword'))
+		//console.log(Reflect.get(1,'name'))
+		let exam12 ={
+			name:'exam12',
+			age:24,
+			set info(value){
+				return this.age= value
+			}
+		}
+		console.log(exam12.age)
+		console.log(Reflect.set(exam12,'age',25))
+		console.log(exam12.age)
+		console.log(Reflect.set(exam12,'age'))
+		console.log(exam12.age)
+		let receiver3 = {
+			age:18
+		}
+		console.log(Reflect.set(exam12,'info',1,receiver3))
+		console.log(receiver3.age)
+		let receiver4 = {
+			name:'receiver4'
+		}
+		console.log(Reflect.set(exam12,'info',1,receiver4))
+		console.log(receiver4.age)
+		let exam13 = {
+			name:'exam13',
+			age:13
+		}
+		console.log(exam13.name)
+		console.log(Reflect.deleteProperty(exam13,'name'))
+		console.log(exam13.name)
+		console.log(Reflect.deleteProperty(exam13,'name'))
+		function exam14(name){
+			this.name=  name
+		}
+		console.log(Reflect.construct(exam14,['exam14']))
+		console.log(exam14.name)
+		class Exam{}
+		let obj3 = new Exam()
+		console.log(Reflect.getPrototypeOf(obj3) === Exam.prototype)
+		let obj4= {}
+		console.log(Reflect.setPrototypeOf(obj4,Array.prototype))
+		console.log(Reflect.apply(Math.max,Math,[1,3,4,5,2]))
+		let mydate={}
+		console.log(Reflect.defineProperty(mydate,'now',{
+			value : () => Date.now()
+		}))
+		console.log(mydate.now)
+		const student = {}
+		console.log(Reflect.defineProperty(student,'name',{value:"mike"}))
+		console.log(student.name)
+		var exam15 = {}
+		console.log(Reflect.defineProperty(exam15,'name',{
+			value:true,
+			enumerable:false
+		}))
+		console.log(Reflect.getOwnPropertyDescriptor(exam15,'name'))
+		console.log(Reflect.getOwnPropertyDescriptor(exam15,'age'))
+		let exam16 = {}
+		console.log(Reflect.isExtensible(exam16))
+		console.log(Reflect.preventExtensions(exam16))
+		var exam17 ={
+			name:123,
+			[Symbol.for('age')]:4
+		}
+		console.log(Reflect.ownKeys(exam17))
+		let exam18 = {
+			name:'exam18',
+			age:18
+		}
+		let handler11 = {
+			get:function(target,key){
+				console.log("gettinng"+key)
+				return Reflect.get(target,key)
+			},
+			set:function(target,key,value){
+				console.log("setting"+key)
+				Reflect.set(target,key,value)
+			}
+		}
+		let proxy17 = new Proxy(exam18,handler11)
+		proxy17.name = '123'
+		proxy17.age = 666
+		console.log(proxy17.name)
+		const queuedObservers = new Set()
+		const observe = fn => queuedObservers.add(fn)
+		const observable = obj => new Proxy(obj,{set})
+		function set(target,key,value,receiver){
+			const result = Reflect.set(target,key,value,receiver)
+			queuedObservers.forEach(observer => observer())
+			return result
+		}*/
+
+
+		/*let string = "apple,banana,orange"
+		console.log(string.includes('banana'))
+		console.log(string.startsWith('apple'))
+		console.log(string.endsWith('apple'))
+		console.log(string.startsWith('apple',6))
+		let string1 = 'Hello'
+		console.log(string1.repeat(2))
+		console.log(string1.repeat(2.1))
+		console.log(string1.repeat(-0.7))
+		console.log(string1.repeat(NaN))
+		//console.log(string1.repeat(-1))
+		console.log(string1.repeat('3'))
+		console.log(string1.repeat('aaa'))
+		let string2 = 'x'
+		console.log(string2.padStart(4,'t'))
+		console.log(string2.padEnd(4,'t'))
+		console.log(string2.padStart(4))
+		console.log(string1.padStart(4))
+		console.log(string1.padEnd(11,',world'))
+		let string3 = "super'\n'man"
+		console.log(string3)
+		let name='cxb'
+		let age=18
+		let info = ` ${name}, ${age} years old.`
+		console.log(info)
+		function f(){
+			return "happy today"
+		}
+		let startsaid = `i ${f()}`
+		console.log(startsaid)
+		innerHtml = `<ul>
+				<li>menu</li>
+				<li>mine</li>
+			</ul>`
+		console.log(innerHtml)
+		//alert`hello es6`
+		function f1(stringArr,...values){
+			let result = '';
+			for(let i=0;i<stringArr.length;i++){
+				result += stringArr[i];
+				if(values[i]){
+					result += values[i]
+				}
+			}
+			return result
+		}
+		let nc = 'wxc'
+		let age1=18
+		console.log(f1`nc : ${nc},age : ${age1}`)
+		function f2(stringArr,...values){
+			let result=''
+			for(let i =0;i<stringArr.length;i++){
+				result += stringArr[i];
+				if(values[i]){
+					result+=String(values[i]).replace(/&/g,'&amp;')
+					.replace(/</g,'&lt;').replace(/>/g,'&gt;')
+					
+				}
+			}
+			return result
+		}
+		customer = '<&admin123>'
+		console.log(f2`welcome ${customer},thank you`)
+		number = 112*/
+		//console.log(i18n`Hello ${nc}, you are visitor number ${number}.`)  
+		
+
+		/*console.log(0b1111)
+		console.log(0B111)
+		console.log(0o11)
+		console.log(0O101)
+		console.log(Math.abs(0.1+0.2-0.3)<Number.EPSILON)
+		console.log(Number.MAX_SAFE_INTEGER+1===Number.MAX_SAFE_INTEGER + 2)
+		console.log(Number.MAX_SAFE_INTEGER+1===Number.MAX_SAFE_INTEGER)
+		console.log(Number.MAX_SAFE_INTEGER-1===Number.MAX_SAFE_INTEGER)
+		console.log(Number.MIN_SAFE_INTEGER+1===Number.MIN_SAFE_INTEGER)
+		console.log(Number.MIN_SAFE_INTEGER-1===Number.MIN_SAFE_INTEGER)
+		console.log(Number.MIN_SAFE_INTEGER-1===Number.MIN_SAFE_INTEGER -2)	
+		console.log(Number.isFinite(1))
+		console.log(Number.isFinite(NaN))
+		console.log(Number.isFinite(Infinity))
+		console.log(Number.isFinite('foo'))
+		console.log(Number.isFinite(true))
+		console.log(Number.isNaN(NaN))
+		console.log(Number.isNaN('true'/0))
+		console.log(Number.isNaN("NaN"))
+console.log(Number.isNaN(undefined))
+console.log(Number.isNaN({}))
+console.log(Number.isNaN("true"))
+		console.log(Number.parseInt("1.2"))
+		console.log(Number.parseInt(1.2))
+		console.log(Number.parseInt("0111",2))
+		console.log(Number.parseInt("0111",10))
+		console.log(Number.parseInt===parseInt)
+		console.log(Number.parseFloat('123.4aw'))
+		console.log(Number.parseFloat('abs'))
+		console.log(Number.parseFloat===parseFloat)
+		console.log(Number.isInteger(1.1))
+		console.log(Number.isInteger(1.0))
+		console.log(Number.isInteger(NaN))
+		console.log(Number.isInteger(Infinity))
+		console.log(Number.isInteger('10'))
+		console.log(Number.isInteger(true))
+		console.log(Number.isInteger([1]))
+		console.log(Number.isInteger(1.0000000000000001))
+		console.log(Number.isInteger(5E-324))
+		console.log(Number.isInteger(5E-325))
+		console.log(Number.isSafeInteger(Number.MAX_SAFE_INTEGER+1))
+		console.log(Math.cbrt(8))
+		console.log(Math.cbrt('-1'))
+		console.log(Math.cbrt('zxc'))
+		console.log(Math.imul(2,3))
+		console.log(Math.imul(0x7fffffff,0x7fffffff))
+		console.log(Math.hypot(3,4))
+		console.log(Math.hypot(3,4,'5'))
+		console.log(Math.hypot(true))
+		console.log(Math.hypot(false))
+		console.log(Math.hypot())
+		console.log(Math.hypot([]))
+		console.log(Math.hypot(''))
+		console.log(Math.hypot(Infinity))
+		console.log(Math.hypot('qwa'))
+		console.log(Math.hypot({}))
+		console.log(Math.hypot(NaN))
+		console.log(Math.clz32(1))
+		console.log(Math.clz32(0))
+		console.log(Math.clz32(0b0100000001000000000000000000000))
+		console.log(Math.clz32())
+		console.log(Math.clz32(0.1))
+		console.log(Math.clz32('1'))
+		console.log(Math.clz32(NaN))
+		console.log(Math.clz32('aaa'))
+		console.log(Math.clz32(undefined))
+		console.log(Math.clz32(Infinity))
+		console.log(Math.trunc(12.3))
+		console.log(Math.trunc('0b11'))
+		console.log(Math.trunc())
+		console.log(Math.trunc(NaN))
+		console.log(Math.trunc("asd"))
+		console.log(Math.fround(2**24-1))
+		console.log(Math.fround(1.234))
+		console.log(Math.fround(0.3))
+		console.log(Math.fround(NaN))
+		console.log(Math.fround(Infinity))
+		console.log(Math.fround('5'))
+		console.log(Math.fround(true))
+		console.log(Math.fround(null))
+		console.log(Math.fround([]))
+		console.log(Math.fround({}))
+		console.log(Math.sign(1))
+		console.log(Math.sign(-1))
+		console.log(Math.sign('1'))
+		console.log(Math.sign(NaN))
+		console.log(Math.sign('a'))
+		console.log(Math.log1p(1))
+		console.log(Math.log1p(2))
+		console.log(Math.log1p(0))
+		console.log(Math.log1p('-1'))
+		console.log(Math.log10(1))
+		console.log(Math.log2(-1))
+		console.log(2**2**2)*/
+
+
+		/*const age = 18;
+		const name ='cyb'
+		const person = {age,name}
+		console.log(person)
+		const person1 = {
+			hel(){
+				console.log('hello')
+			}
+		}
+		person1.hel()
+		const obj = {
+			* myGenerator(){
+				yield 'hello es6'
+			}
+		}
+		const obj1 = {
+			['hh'+'a'](){
+				return 'haha'
+			}
+		}
+		console.log(obj1.hha())
+		const hhh ='hhh'
+		const obj2={
+			//[hhh]
+		} 
+		//console.log(obj2)
+		const obj3 = {
+			[hhh+'2']:'hoho'
+		}
+		console.log(obj3)
+		let person2 = {name:'wsnd',age:'26'}
+		let someone = {...person}
+		console.log(someone)
+		let gender={gender:'man'}
+		let address = {address:'fjzz'}
+		let person3 = {...gender,...address}
+		console.log(person3)
+		let person4 = {name:'ps4',age:4}
+		let someone2= {...person4,name:'so2',age:2}
+		console.log(someone2)
+		let someone3= {name:'so3',age:3,...person4}
+		console.log(someone3)
+		let a= {...{},a:1,b:2}
+		console.log(a)
+		let b ={...null,...undefined,a:1,b:2}
+		console.log(b)
+		let target = {a:1}
+		let obj4 ={b:2}
+		let obj5 ={c:3}
+		Object.assign(target,obj4,obj5)
+		console.log(target)
+		Object.assign(3)
+		console.log(typeof Object.assign(3))
+		//Object.assign(null)
+		//Object.assign(undefined)
+		console.log(Object.assign(1,undefined))
+		//console.log(Object.assign(null,2))
+		let sourceobj = {a:{b:1}}
+		let targetobj = {c:3}
+		Object.assign(targetobj,sourceobj)
+		targetobj.a.b = 2
+		console.log(sourceobj.a.b)
+		let sourceobj1 = {a:{b:1,c:2}}
+		let targetobj1= {a:{b:'ohh'}}
+		Object.assign(sourceobj1,targetobj1)
+		console.log(sourceobj1)
+		console.log(Object.assign([1,2],[3]))
+		console.log(Object.is('q','q'))
+		console.log(Object.is(1,1))
+		console.log(Object.is([1],[1]))
+		console.log(Object.is({a:1},{a:1}))
+		console.log(Object.is(+0,-0))
+		console.log(+0===-0)
+		console.log(Object.is(NaN,NaN))
+		console.log(NaN===NaN)*/
+
+		
+		/*console.log(Array.of(1,2,3,4))
+		console.log(Array.of(1,'2',true))
+		console.log(Array.of())
+		console.log(Array.from([1,2]))
+		console.log(Array.from([1, ,3]))
+		console.log(Array.from([1,2,3],(n) => n*2))
+		let map = {
+			do:function(n){
+				return n*2
+			}
+		}
+		let arrayLike = [1,2,3]	
+		console.log(Array.from(arrayLike,function(n){
+			return this.do(n)
+		},map))
+		let arr = Array.from({
+			0:'1',
+			1:'2',
+			2:'3'
+		})
+		console.log(arr)
+		let arr1 = Array.from({
+			0:'1',
+			1:'2',
+			2:'3',
+			length:3
+		})
+		console.log(arr1)
+		let arr2 = Array.from({
+			a:1,
+			b:2,
+			c:'3',
+			length:3
+		})
+		console.log(arr2)
+		let map1 = new Map()
+		map1.set('key0','value0')
+		map1.set('key1','value1')
+		console.log(Array.from(map1))
+		let arr3= [4,5,6]
+		let set = new Set(arr3)
+		console.log(Array.from(set))
+		let str='str'
+		console.log(Array.from(str))
+		let arr4 = Array.of(1,2,3,4,5)
+		console.log(arr4.find(item => item>3))
+		console.log([,1].find(item=>true))
+		console.log(arr4.findIndex(item => item>3))
+		console.log([,1].findIndex(item=>true))
+		console.log(arr4.fill(1,2,3))
+		console.log(arr4.copyWithin(1,2,4))
+		console.log(arr4.copyWithin(-1,2))
+		for(let [key,value] of ['a','b'].entries()){
+			console.log(key,value)
+		}
+		let entries =['a','b'].entries()
+		console.log(entries.next().value)	
+		console.log(entries.next().value)
+		console.log([...[,'a'].entries()])
+		for(let key of ['a','b'].keys()){
+			console.log(key)
+		}
+		for(let key of ['a','b'].values()){
+			console.log(key)
+		}
+		console.log([...[,'a'].values()])
+		console.log([1,2,3].includes(1))
+		console.log([1,2,3].includes(1,2))
+		console.log([1,NaN,3].includes(NaN))
+		console.log([1,[2,3]].flat())
+		console.log([1,[2,[3,[4,[5]]]]].flat(3))
+		console.log([1,[2,[3,[4,[5]]]]].flat(Infinity))
+		console.log([1,[2, ,3]].flat())
+		console.log([1,2,3].flatMap(n => [n*2]))
+		let buffer = new ArrayBuffer(10)
+		console.log(buffer.byteLength)
+		let buffer1 = buffer.slice(1,3)
+		console.log(buffer1.byteLength)
+		dataView = new DataView(buffer)
+		dataView.setInt8(0,1)
+		console.log(dataView.getInt8(0))
+		let buffer2 = new ArrayBuffer(10)
+		dataView1 = new DataView(buffer2,0,3)
+		dataView1.setInt8(2,1)
+		console.log(dataView1.getInt8(2))
+		let buffer3 = new ArrayBuffer(10)
+		view = new Int8Array(buffer3)
+		console.log(view.byteLength)
+		let view1= new Int32Array(10)
+		console.log(view1.byteLength)
+		console.log(view1.length)
+		let view2 = new Int32Array()
+		console.log(view2.byteLength)
+		console.log(view2.length)
+		let arr5 = Array.from({
+			0:'1',
+			1:'2',
+			2:'3',
+			length:3
+		})
+		let view3=  new Int16Array([1,2])
+		     view4 = new Int16Array(view3)
+		     view5 = new Int32Array(new Set([1,2,3]))
+		     view6 = new Int32Array([1,2,3])
+		     view7 = new Int32Array(arr5)
+		console.log(view3.buffer===view4.buffer)
+		console.log(view5.byteLength)
+		console.log(view6.byteLength)
+		console.log(view7.byteLength)
+		let view8 = new Int16Array([1,2])
+		view8.length = 3
+		console.log(view8.length)
+		let view9 =new Int16Array([1,2])
+		for(let [k,v] of view9.entries()){
+			console.log(k,v)
+		}
+		let view10 = new Int16Array([1,2])
+		console.log(view10.find(n => n>1))
+		let view11 = Int16Array.of(1,2)
+		console.log(view11 instanceof Int16Array)
+		console.log(Array.isArray(view10))
+		let view12 = new Int16Array(4)
+		view12.set([1,2])
+		view12.set([3,4],2)
+		console.log(view12)
+		let view13 = new Int16Array([1,2,3,5]),
+		     subview1 = view13.subarray(),
+		     subview2 = view13.subarray(1),
+		     subview3 = view13.subarray(2,3)
+		console.log(subview1)
+		console.log(subview2)
+		console.log(subview3)
+		let arr6 = [1,2]
+		let arr7 = [...arr6]
+		console.log(arr7)
+		let arr8 = [1,,3]
+		let arr9 = [...arr8]
+		console.log(arr9)
+		console.log([...[1,3],...[7,9]])*/
+
+
+		/*function fun(name,name){
+			console.log(name)
+		}
+		//function fun1(name,name,age=18){
+			//console.log(name,age)
+		//}
+		function fun2(name,age=18){
+			console.log(name,age)
+		}
+		fun2('wxc')
+		function fun3(x,y=x){
+			console.log(x,y)
+		}
+		fun3(1)
+		function fun4(...values){
+			console.log(values.length)
+		}
+		fun4(1,2,'a')
+		var f = v => v
+		console.log(f(1))
+		var f = function(a){
+			return a
+		}
+		console.log(f(1))
+		var f = (a,b) => a+b
+		f(1,2)
+		var f = (id,name) => ({id:id,name:name})
+		console.log(f(0,'wxc'))
+		var func = () => {
+			console.log(this)
+		}
+		func(1)
+		function fn(){
+			setTimeout(()=>{
+				console.log(this.a)
+			},0)
+		}
+		var fn1 = () => { setTimeout(()=>{
+				console.log(this.a)
+			},0)}
+		var a = 2;
+		fn1()
+		fn1.call({a:3})
+		var Person = {
+			'age':18,
+			'address': ()=>{
+				setTimeout(()=>{
+					console.log(this.age)
+				},0)
+			}
+		}
+		var age = 19
+		Person.address()
+		var Person1 = {
+			'age':18,
+			'address': function(){
+				setTimeout(()=>{
+					console.log(this.age)
+				},0)
+			}
+		}
+		var age = 19
+		Person1.address()
+		var button =document.getElementById("button")
+		console.log(button)
+		button.addEventListener('click', () => {
+			this.classList.toggle('on');
+		})*/
+
+	
+		/*const items = ['zero','one','two']
+		const it = items[Symbol.iterator]()
+		console.log(it.next())
+		for(let item of items){
+			console.log(item)
+		}
+		const map = new Map()
+		map.set(0,'zero')
+		map.set(1,'zero')
+		for(let item of map){
+			console.log(item)
+		}	
+		const set = new Set()
+		set.add("zero")
+		set.add("three")
+		for(let item of set){
+			console.log(item)
+		}
+		var args = function () {
+			for(let item of arguments){
+				console.log(item)
+			}
+		}
+		args('zero','four')
+		//for(let item of {}){
+			//console.log(item)
+		//}
+		let Example = class{
+			constructor(a){
+				this.a = a
+			}
+		}
+		let Example1 = class Example1{
+			constructor(a){
+				this.a = a
+			} 
+		} 
+		class Example2{
+			constructor(a){
+				this.a = a
+			} 
+		}
+		Object.assign(Example2.prototype,{})
+		class Example3 {
+			static a =1
+		}
+		Example3.b = 2
+		console.log(Example3.b)
+		console.log(Example3.a)
+		let Example4 = class Example{
+			constructor(a){
+				this.a = a
+				console.log(a)
+			}
+		}
+		console.log(Example4.name)
+		new Example4(1)
+		console.log(new Example4() instanceof Example4)
+		class Example5{
+			constructor(){
+				return new Example4()
+			}
+		}
+		console.log(new Example5 instanceof Example4)
+		class Example6{
+			static sum(a,b){
+				console.log(a+b)
+			}
+		}
+		Example6.sum(1,3)
+		class Example7{
+			sum(a,b){
+				console.log(a+b)
+			}
+		}
+		let example7 = new Example7()
+		example7.sum(2,4)
+		class Example8{
+			constructor(a,b){
+				this.a =a;
+				this.b =b;
+				console.log(a,b)
+			}
+			sum(){
+				return this.a+this.b	
+			}
+		}
+		let exam1 = new Example8(1,2)
+		let exam2 = new Example8(3,4)
+		console.log(exam1._proto_==exam2._proto_)
+		exam1.sub = function sub() {
+			return this.b - this.a
+		}
+		console.log(exam1.sub())
+		//console.log(exam2.sub())
+		function testable(target){
+			target.isTestable = true
+		}
+		//@testable
+		//class Example9{}
+		//Example.isTestable
+		class Example10 {
+			constructor(a,b){
+				this.a = a;
+				this.b = b;
+			}
+			get a(){
+				console.log('get')
+				return this.a
+			}
+			set a(a){
+				console.log('set')
+				this.a = a
+			}
+		}
+		//let exam3 = new Example10(1,2)
+		class Example11{
+			constructor(a,b){
+				this.a = a;
+				this.b = b;
+			}
+			get a(){
+				console.log('get')
+				return this._a
+			}
+			set a(a){
+				console.log('set')
+				this._a = a
+			}
+		}
+		let exam4 = new Example11(1,2)
+		console.log(exam4._a)
+		class father{
+			constructor(){}		
+			get a(){
+				return this._a
+			}
+		}
+		class child extends father{
+			constructor(){
+				super()
+			}
+			set a(a){
+				this._a = a
+			}
+		}
+		let test= new child()
+		test.a = 2
+		console.log(test._a)
+		console.log(test.a)
+		class father1{
+			constructor(){}		
+			get a(){
+				return this._a
+			}
+			set a(a){
+				this._a = a
+			}
+		}
+		class child1 extends father1{
+			constructor(){
+				super()
+			}
+		}
+		let test1 = new child1()
+		test1.a = 3
+		console.log(test1._a)
+		console.log(test1.a)
+		class father2 {
+			test(){
+				return 0;
+			}
+			static test1(){
+				return 1;
+			}
+		}
+		class child2 extends father2{
+			constructor(){
+				super()
+				console.log(super.test())
+			}
+			static test3(){
+				return super.test1()+1;
+			}
+		}
+		console.log(child2.test3())*/
+
+
+		
+		/*function supportImport(){
+			return 'import' in document.createElement('link')
+		}
+		if(supportImport()){
+			console.log('浏览器支持')
+		}*/
+
+
+	
+		/*const p1 = new Promise(function(resolve,reject){
+			resolve("success1")
+			resolve("success2")
+		})
+		const p2 = new Promise(function(resolve,reject){
+			resolve("success3")
+			resolve("reject")
+		})
+		p1.then(function(value){
+			console.log(value)
+		})
+		p2.then(function(value){
+			console.log(value)
+		})
+		const p = new Promise(function(resolve,reject){
+			resolve("success")
+		})
+		p.then(function(value){
+			console.log(value)
+		})
+		console.log("start")
+		const p3 = new Promise(function(resolve,reject){
+			resolve(1)
+		}).then(function(value){
+			console.log(value)
+			return value*2
+		}).then(function(value){
+			console.log(value)
+			//return value*2
+		}).then(function(value){
+			console.log(value)
+			return Promise.resolve('resolve')
+		}).then(function(value){
+			console.log(value)
+			return Promise.resolve('reject')
+		}).then(function(value){
+			console.log('resolve:'+value)
+			//return value*2
+		},function(err){
+			console.log('reject'+value)
+		})
+		const p4 = new Promise(function(resolve,reject){
+			resolve(1)
+		}).then(function(result){
+			p5(result).then(newResult => p6(newResult))
+		}).then(() => p7)*/
+		
+
+		
+	</script>
+	<script src="./mk.js"></script>
+	<script>
+		//import{myname,myage,myfn,myclass} from "./mk.js"
+		console.log(myfn())
+		
+	
+
+		/*function* fun(){
+			console.log("one");
+			yield '1';
+			console.log('two');
+			yield '2'
+			console.log('three');
+			return '3';
+		}
+		
+		for(let i of fun()){
+			console.log(i)
+		}
+		var f = fun()
+		f.next()
+		f.next()
+		f.next()
+		console.log("-------!--------")
+		function* sendParameter(){
+			console.log("start")
+			var x = yield '2'
+			console.log('one'+x)
+			var y = yield '3'
+			console.log('two'+y)
+			console.log('total:'+(x+y))
+		}
+		var sendp1 = sendParameter();
+		console.log(sendp1.next())
+		console.log(sendp1.next())
+		console.log(sendp1.next())
+		var sendp2 = sendParameter();
+		console.log(sendp2.next(10))
+		console.log(sendp2.next(20))
+		console.log(sendp2.next(30))
+		function* foo(){
+			yield 1;
+			yield 2;
+			yield 3;
+		}
+		var f = foo()
+		console.log(f.next())
+		console.log(f.return('foo'))
+		console.log(f.next())
+		var g = function* (){
+			try{
+				yield
+			}catch(e){
+				console.log('err : '+e)
+			}
+		}
+		var i = g()
+		console.log(i.next())
+		try{
+			i.throw('a')
+			i.throw('b')
+		}catch(e){
+			console.log('throw err : '+e)
+		}
+		function* callee(){
+			console.log('callee : '+(yield))
+		}
+		function* caller(){
+			while (true){
+				yield* callee()
+			}
+		}
+		const callerObj = caller()
+		console.log(callerObj.next())
+		console.log(callerObj.next('a'))
+		console.log(callerObj.next('b'))
+		function* caller1(){
+			while(true){
+				for(var value of callee()){
+					yield value;
+				}
+			}
+		}
+		const callerObj1 = caller1()
+		console.log(callerObj1.next())
+		console.log(callerObj1.next('a'))
+		console.log(callerObj1.next('b'))
+		function* objectEntries(obj){
+			const propKeys = Reflect.ownKeys(obj)
+			for(const propKey of propKeys){
+				yield[propKey,obj[propKey]]
+			}
+		}
+		const jane = {first:'jane',last:'doe'}
+		for(const [key,value] of objectEntries(jane)){
+			console.log(`${key}: ${value}`)
+		}*/
+
+
+		/*async function helloasync(){
+			return 'hello async'
+		}
+		console.log(helloasync())
+		helloasync().then(v => {console.log(v)
+		})
+
+		function testAwait(){
+			return new Promise((resolve) => {
+				setTimeout(function(){
+					console.log("testAwait")
+					resolve()
+				},1000)
+			})
+		}
+		async function helloAsync(){
+			await testAwait()
+			//testAwait()
+			console.log("helloAsync")
+		}
+		helloAsync()
+		function testAwait1(x){
+			return new Promise(resolve =>{
+				setTimeout(()=>{
+					resolve(x)
+				},2000)
+			}) 
+		}
+		async function helloasync1(){
+			var x= await testAwait1('hello async1')
+			console.log(x)
+		}
+		helloasync1()
+		function testAwait2(){
+			console.log("testAwait2")
+		}
+		async function helloasync2(){
+			await testAwait2()
+			console.log('helloasync2')
+		}
+		helloasync2()
+		function testAwait3(){
+			setTimeout(()=>{console.log("testAwait3")},2000)
+			
+		}
+		async function helloasync3(){
+			await testAwait3()
+			console.log('helloasync3')
+		}
+		helloasync3()*/
+
+
+
+		let obj = {'a':'001','b':'002','c':'003'}
+		let arr = [1,3,4]
+		arr.forEach((item)=>{console.log(item)})
+		function* objectEntries(obj){
+			const propKeys = Reflect.ownKeys(obj)
+			for(const propKey of propKeys){
+				yield[propKey,obj[propKey]]
+			}
+		}
+		for(let [key,value] of objectEntries(obj)){
+			console.log(`${key}: ${value}`)
+		}
+		for(let key of Reflect.ownKeys(obj)){
+			console.log(`${key}`)
+		}
+	</script>
+	<!--<template style="display:block;height:100px">
+		<div>123</div>
+	</template>-->
+</body>
+</html>

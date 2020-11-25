@@ -1,0 +1,12 @@
+<view>
+  <view class="comment-til" style="position:fixed;background:white;z-index:100">comment</view>
+  <view style="width:100%;height:41px"></view>
+  <view class= "comment-list">
+    <view class="comment" wx:for="{{comments}}">
+      <view class="comment-img"></view>
+      <view class="comment-name">{{item.name}}</view>
+      <view class="comment-ms">{{item.ms}}</view>
+      <view class="comment-content">内容: {{item.comment}}</view>
+    </view>
+  </view>
+</view>

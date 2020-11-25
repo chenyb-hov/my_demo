@@ -1,0 +1,504 @@
+node.js运行服务器端的javaScript
+
+引入模块
+require()
+
+引入http模块 var http = require('http')
+创建服务器 http.createServer(function(request,response){
+	发送http头部 HTTP状态值:200ok
+	response.writeHead(200,{'Content-Type':'text/plain'});
+	发送响应数据
+	response.end(内容)
+}).listen(端口号)
+Node.js REPL
+下划线_变量返回上一表达式的结果
+
+REPL命令
+ctrl+c退出当前终端
+ctrl+c+c退出Node REPL
+↑↓查看输入的历史命令
+tab 列出当前命令
+.help 列出使用命令
+.break 退出多行表达式
+.clear 退出多行表达式
+.save filename 保存当前的Node REPL会话到指定文件
+.load filename 载入当前 Node REPL 会话的文件内容
+
+回调函数
+一般作为函数的最后一个参数出现
+例如 var fs = require("fs")
+fs.readFile(filename,function(err,data){
+	if(err) return console.log(err)
+	console.log(data.toString)
+})
+
+引入events模块
+var events = require("events")
+创建eventEmitter对象
+var eventEmitter = new events.EventEmitter()
+创建事件
+var connect = function connected(){}
+绑定connection事件
+eventEmitter.on("name",connect)
+触发事件
+eventEmitter.emit('name')
+若绑定的事件有多个同名则每个事件都会执行
+addListener(str,function)事件监听
+on(str,function)事件监听
+once(str,function)一次性事件监听
+removeListener(str,function)移除某个事件监听
+removeAllListeners()移除所有事件监听,若有参数则移除此事件的所有监听器
+setMaxListeners(n)设置监听器数量
+listeners(str) 返回指定事件的监听器数组
+emit(str)执行监听器
+listenerCount(emitter,str)返回指定事件的监听器数量
+error事件 内置事件,遇到异常时要触发error事件 防止程序崩溃
+
+Buffer缓冲区
+buffer实例一般用于表示编码字符的序列
+const buf = Buffer.from('str',encoding)encoding不写默认utf-8
+Buffer.alloc(size,fill)返回一个指定大小的Buffer实例,不写fill默认0
+Buffer.allocUnsafe(size) 返回一个指定大小的Buffer实例,不会被初始化
+写入缓冲区
+buf = Buffer.alloc(256)
+len = buf.write(内容)
+缓冲区读取数据
+buf.toString(encoding,start,end)编码,索引,前闭后开 不写索引全部数据
+Buffer转JSON对象
+json = JSON.stringify(buf)
+缓冲区合并
+Buffer.concat([])参数 : 缓冲区数组
+缓冲区比较
+buf.compare(otherbuf) 返回一个数值 与0进行比较
+缓冲区拷贝
+buf.copy(otherbuf,index) 将buf拷贝到otherbuf的index处并覆盖otherbuf后面部分
+缓冲区裁剪
+buf.slice(start,end)返回一个新的缓冲区
+缓冲区长度
+buf.length
+
+Stream
+从流读取数据
+var fs = require("fs")
+rs = fs.createReadStream("filename")
+fs.setEncoding()
+rs.on('',function) 首个参数 data,end,error
+写入流
+var fs = require("fs")
+ws = fs.createWriteStream(filename)
+ws.write(data,encoding)
+ws.end()
+ws.on('',function) 首个参数 data,end,error
+读取一个文件并写入另一个文件
+rs.pipe(ws)
+链式流 压缩解压文件
+var fs = require("fs")
+var zlib = require('zlib')
+fs.createReadStream(filename).pipe(zlib.createGzip()).pipe(fs.createWriteStream(filename1))
+
+创建模块 main.js
+var mymode = require('./mymode')
+mymode.fun()
+创建 mymode.js
+exports.fun = function (){}
+
+fun.js
+function fun(){
+	this.a = function(){}
+	this.b = function(){}
+}
+module.exports = fun
+main.js
+var Myfun = require('./fun')
+var myfun = new Myfun()
+myfun.a()
+myfun.b()
+
+匿名函数
+把一个函数作为变量传递 function fun1(){}
+function fun2(fun,str){}
+fun2(fun1,"123")
+
+路由
+router.js
+function route(p){
+	console.log(p)
+}
+exports.route = route
+server.js
+var http = require("http")
+var url = require('url')
+function start(route){
+	function onrequest(request,response){
+		var p = url.parse(request.url).pathname;
+		route(p)
+		response.writeHead(200,{"Content-Type":"text/plain"})
+		response.write("2333")
+		response.end()
+	}
+	http.createServer(onrequest).listen(1234)
+	
+}
+exports.start = start
+main.js
+var server = require("./server")
+var router = require("./router")
+server.start(router.route)
+
+全局对象
+__filename 表示当前正在执行的脚本的文件名。
+__dirname 表示当前执行脚本所在的目录
+process 
+事件 
+exit 进程退出 beforeExit  node 清空事件循环，并且没有其他安排时触发这个事件
+uncaughtException 当一个异常冒泡回到事件循环 Signal 当进程接收到信号时就触发
+属性 
+stdout 标准输出流。stdin 标准输入流。stderr 标准错误流。argv 返回一个数组 execPath 返回当前执行node二进制文件的绝对路径 execArgv 返回一个数组 env 返回一个对象当前shell环境变量 exitCode 进程退出时的代码 version 版本 versions 一个属性包含版本和依赖 config 包含用来编译当前node执行文件的js配置选项的对象 pid 当前进程的进程号 title 进程名 arch 当前cpu架构 platform 运行程序所在的系统 mainModule require.main的备选方法
+process.stdout.write() 输出到终端
+方法
+abort() 让node退出并生成一个核心文件
+chdir() 改变当前工作进程的目录,失败则抛出异常
+cwd() 返回当前进程的工作目录
+exit() 使用指定的code结束进程,若忽略,将使用code
+getgid() 获取进程的群组id
+setgid() 设置进程的群组id
+getuid() 获取进程用户id
+setuid() 设置进程用户id
+getgroups() 返回进程的群组id数组
+setgroups() 返回进程的群组id数组
+initgroups() 读取/etc/group,并初始化群组访问列表
+kill() 发送信号给进程
+memoryUsage() 返回一个对象,描述node内存状况
+nextTick() 一旦当前事件循环结束,调用回调函数
+umask() 读取或设置进程文件的掩码
+uptime() 返回node已经运行的秒属
+hrtime() 返回当前进程的高分辨时间 
+
+node.js 常用工具
+util.callbackify 将异步函数转换成遵循异常优先的回调风格的函数
+const util = require("util")
+async function fn(){
+	return '111'
+}
+const callback = util.callbackify(fn);
+callback((err,ret)=> {
+	if(err) throw err;
+	console.log(ret)
+})
+util.inherits(class,superclass) 实现对象间原型继承的函数
+util.inspect 将任意对象转换为字符串的方法
+util.isArray(obj) 判断给定的对象是否为数组返回布尔值
+util.isRegExp(obj) 判断给定的对象是否为正则表达式返回布尔值
+util.isDate(obj) 判断给定的对象是否为日期返回布尔值
+
+node.js文件系统
+var fs = require("fs")
+异步读取
+fs.readFile(filename,function(err,data){})
+同步读取
+var data = fs.readFileSync(filename)
+打开文件
+fs.open(路径,打开行为读或者写,回调函数)
+获取文件信息
+fs.stat(路径,回调函数)
+stats参数 stats.isFile() 判断是否为文件返回布尔值
+stats.isDirectory() 判断是否为目录返回布尔值
+stats.isBlockDevice() 判断是否为块设备返回布尔值
+stats.isCharacterDevice() 判断是否为字符设备返回布尔值
+stats.isSymbolicLink() 判断是否为软链接返回布尔值
+stats.isFIFO() 判断是否为FIFO返回布尔值
+stats.isSocket() 判断是否为Socket返回布尔值
+写入文件
+fs.writeFile(文件名,写入数据,回调函数)
+读取文件
+fs.read(fs.open回调函数文件描述参数,缓冲区,缓冲区写入的写入偏移量,要从文件中读取的字节数,文件读取的起始位置,回调函数) 
+关闭文件
+fs.close(fs.open回调函数文件描述参数,回调函数)
+截取文件
+fs.ftruncate(fs.open回调函数文件描述参数,文件内容截取的长度,回调函数)
+删除文件
+fs.unlink(路径,回调函数)
+创建目录
+fs.mkdir(文件路径,回调函数)
+读取目录
+fs.readdir(文件路径,回调函数)
+删除目录
+fs.rmdir(文件路径,回调函数)
+
+node.js GET/POST
+获取get请求内容
+var http = require("http")
+var url = require("url")
+var util = require("util")
+http.createServer(function(req,res){
+	res.writeHead(200,{'Context-Type':'text/plain;charset=utf-8'});
+	res.end(util.inspect(url.parse(req.url,true)))
+}).listen(3000)
+获取URL参数
+var http = require("http")
+var url = require("url")
+var util = require("util")
+http.createServer(function(req,res){
+	res.writeHead(200,{'Content-Type':'text/plain'})
+	var params = url.parse(req.url,true).query
+	res.write(params.name)
+	res.write(params.url)
+	res.end()
+}).listen(3000)
+获取POST请求内容
+var http = require("http")
+var querystring = require("querystring")
+var util = require("util")
+http.createServer(function(req,res){
+	var post='';
+	req.on('data',function(chunk){
+		post+=chunk
+	})
+	req.on('end',function(){
+		post = querystring.parse(post)
+		res.end(util.inspect(post))
+	})
+}).listen(3000)
+
+node.js工具模块
+OS
+var os = require("os")
+方法
+os.tmpdir() 返回操作系统的默认临时文件夹
+os.endianness() 返回CPU的字节序,可能是BE或LE
+os.hostname() 返回操作系统的主机名
+os.type() 返回操作系统名
+os.platform() 返回编译时的操作系统名
+os.arch() 返回操作系统CPU架构
+os.release() 返回操作系统的发行版本
+os.uptime() 返回操作系统运行的时间,单位秒
+os.loadavg() 返回一个包含1,5,15分钟平均负载的数组
+os.totalmem() 返回系统内存总量,单位字节
+os.freemem() 返回操作系统空闲内存量,单位字节
+os.cpus() 返回一个数组对象
+os.networkInterfaces() 获取网络接口列表
+Path
+var path = require('path')
+方法
+path.normalize() 规范化路径
+path.join() 用于连接路径
+path.resolve([from...],to) 将to参数解析为绝对路径
+path.isAbsolute(路径) 判断path是否为绝对路径
+path.relative(from,to) 用于将绝对路径转为相对路径
+path.dirname(path) 返回路径中代表文件夹的部分
+path.basename(path) 返回路径中的在最后一部分
+path.extname(path) 返回路径中问文件的后缀名
+path.parse(pathstr) 返回路径字符串对象
+path.format(pathobj) 从对象中返回路径字符串 
+属性
+path.sep /或\\ 
+path.delimiter :或;
+NET
+net.createServer() 创建TCP服务器
+net.connet() 返回一个新的net.Socket,并连接到指定的地址和端口
+net.createConnetion() 创建一个端口port到主机host的TCP连接
+net.isIP() 检测输入是否为IP地址
+net.isIPv4() 如果输入的地址为IPv4返回true否则为false
+net.isIPv6() 如果输入的地址为IPv6返回true否则为false
+DNS
+var dns = require('dns')
+dns.lookup() 将域名解析为第一条找到的记录
+dns.lookupService(address,port,回调函数) 使用getnameinfo解析传入的地址和端口为域名和服务
+dns.resolve() 将一个域名解析为一个指定记录类型的数组
+dns.resolve4() 仅能查询IPv4记录
+dns.resolve6() 仅能查询IPv6记录
+dns.resolveMx()仅能查询邮件交换
+dns.resolveTxt() 仅能进行文本查询
+dns.resolveSrv() 仅能进行服务记录查询
+dns.resolveSoa() 仅能查询权威记录
+dns.resolveNs() 仅能进行域名服务器记录查询
+dns.resolveCname() 仅能进行别名记录查询
+dns.reverse() 反向解析IP地址
+dns.getServers() 返回一个用于当前解析的IP
+dns.setServers() 指定一组IP地址作为解析服务器
+Domain
+var domain = require('domain')
+方法
+domain.run(function) 在域的上下文运行提供的函数
+domain.add(emitter) 显式的增加事件
+domain.remove(emitter) 删除事件
+domain.bind(回调函数) 返回的函数是一个对与所提供的回调函数的包装函数
+domain.intercapt(回调函数) 捕获被抛出的错误且拦截Error对象作为参数传入这个函数
+domain.enter() 进入一个异步调用的上下文,绑定到domain
+domain.exit() 退出当前的domain,切换到不同的链的异步调用的上下文中
+domain.dispose() 释放一个domain对象,让node进程回收这部分资源
+domain.create() 返回一个domain()对象
+domain.members 已加入domain对象的域定时器和事件发射器的数组
+
+Web模块
+创建Web服务器
+server.js
+var http = require("http")
+var fs = require("fs")
+var url = require("url")
+http.createServer(function(request,response){
+	var pathname = url.parse(request.url).pathname
+	fs.readFile(pathname.substr(1),function(err,data){
+		if(err){
+			response.writeHead(404,{"Content-Type":'text/html'})
+		}else{
+			response.writeHead(200,{"Content-Type":"text/html"})	
+			response.write(data.toString())
+		}
+		response.end()
+	})
+}).listen(8080)
+创建Web客户端
+client.js
+var http = require("http")
+var option = {
+	host:'localhost',
+	port:'8080',
+	path:'/index.html'
+}
+var callback = function(response){
+	var body=''
+	response.on('data',function(data){
+		body+=data
+	})
+	response.on("end",function(){
+		console.log(body)
+	})
+}
+var req = http.request(options,callback)
+req.end()
+
+Express框架
+var express = require("express")
+var app = express()
+var bodyParser = require('body-parser')
+var urlencodedParser = bodyParser.urlencoded({extended:false})
+app.get('/',function(req,res){
+	res.send()
+})
+app.post('/',urlencodeParser,function(req,res){
+	var response = {
+		'key':req.body.elname,
+		'key1':req.body.elname1
+	}
+	res.end(JSON.stringify(response))
+})
+var server = app.listen(8081,function(){
+	var host = server.address().address
+	var port = server.address().port
+	console.log(host,port)
+})
+req.app 当callback为外部文件时,用req.app访问express的实例
+req.baseUrl 获取路由当前安装的URL路径
+req.body / req.cookies 获取请求主体/Cookies
+req.fresh / req.state 判断请求是否还新鲜
+req.hostname / req.ip 获取主机名和IP地址
+req.originalUrl 获取原始请求URL
+req.params 获取路由的parameters
+req.path 获取请求路径
+req.protocol 获取协议类型
+req.query 获取URL的查询参数串
+req.route 获取当前匹配的路由
+req.subdomains 获取子域名
+req.accepts() 检查可接受的请求的文档类型
+req.acceptsCharsets/req.acceptsEncodings/req.acceptsLanguages 返回指定字符集的第一个可接受字符编码
+req.get() 获取指定的HTTP请求头
+req.is() 判断请求头Content-Type的MIME类型
+res.app 与req.app一样
+res.append() 追加HTTP头
+res.set() 在res.append()后将重置之前设置的头
+res.cookie() 设置Cookie
+option:domain/expires/httpOnly/maxAge/path/secure/signed
+res.clearCookie() 清除Cookie
+res.download() 传送指定路径的文件
+res.get() 返回指定的HTTP头
+res.json() 传送JSON响应
+res.jsonp() 传送JSONP响应
+res.location() 只设置响应的LocationHTTP头,不设置状态码或者close response
+res.redirect() 设置响应的LocationHTTP头,并且设置状态码302
+res.render(view,[locals],回调函数) 渲染一个view
+res.send() 传送HTTP响应
+res.sendFile() 传送指定路径的文件
+res.set() 设置HTTP头
+res.status() 设置HTTP状态码
+res.type() 设置Content-Type 的MIME类型
+设置静态文件
+app.use(路径,express.static(文件夹名))
+文件上传
+form表单加上属性 enctype="multipart/form-data"
+var express = require('express')
+var app = express()
+var fs = require('fs')
+var bodyParser = require('body-parser')
+var multer = require('multer')
+app.use("/public",express.static('public'))
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(multer({dest:'/tmp'}).array('image'))
+app.get('/index.html',function(req,res){
+	res.sendFile(__dirname + '/' + "index.html")
+})
+app.post('/file_upload',function(req,res){
+	var des_file = __dirname + "/" + req.files[0].originalname
+	fs.readFile(req.files[0].path,function(err,data){
+		fs.writeFile(des_file,data,function(err){
+			if(err){
+				console.log(err)
+			}
+			else{
+				response={
+					message:'File uploaded successfully',
+					filename:req.files[0].originalname
+				}
+			}
+			res.end(JSON.stringify(response))
+		})
+	})
+})
+var server = app.listen(8081, function(){
+	var host = server.address().address
+	var port = server.address().port
+})
+Cookie管理
+var express = require('express')
+var cookieParser = require('cookie-parser')
+var util = require('util')
+var app = express()
+app.use(cookieParser())
+app.get('/',function(req,res){
+	
+})
+app.listen(8081)
+
+RESTful API
+多进程
+exec()使用子进程执行命令,缓存子进程的输出,并将子进程的输出以回调函数参数的形式返回
+const fs = require("fs")
+const child_process = require("child_process")
+for(var i=0;i<3;i++){
+	var workerProcess = child_process.exec('node support.js' +i,function(error,stdout,stderr){
+		if(err){}
+		console.log("stdout:"+stdout);
+		console.log("stderr:"+stderr)
+})
+	workerProcess.on("exit",function(code){
+		console.log(''+code)
+	})
+}
+spawn() 使用指定的命令行参数创建新的进程
+const fs =require("fs")
+const child_process = require("child_process")
+for(var i=0;i<3;i++){
+	var workerProcess = child_process.spawn('node',['support.js',i])
+	workerProcess.stdout.on('data',function(data){})
+	workerProcess.stderr.on('data',function(data){})
+	workerProcess.on('close',function(code){})
+}
+fork()创建进程
+const fs = require("fs")
+const child_process = require('child_process')
+for(var i = 0; i<3; i++){
+	var worker_process = child_process.fork('support.js',[i])
+	worker_process.on("close",function(code){
+		
+	})
+}

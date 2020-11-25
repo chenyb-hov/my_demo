@@ -1,0 +1,34 @@
+新建项目
+新建WEB窗体
+表单 加runat="server" action=""表单提交不用写cs后缀
+数据接收在aspx.cs文件里操作 
+void Page_Load(){}页面加载时被触发
+在原来的aspx文件里加入按钮<asp:Button ID="" runat="server" onclick=""/>
+点击事件在aspx.cs文件里 写方法
+通过Requset["name"]取出表单传过来的值
+可通过this.ID.Text赋值给控件
+<asp:Button/>相当于<button>
+<asp:TextBox/>相当于<input/> TextMode = ""类型   Text值
+<asp:Label/>相当于<span></span>
+aspx.cs里进行页面跳转 Server.Transfer(url+data,true) 类似ajax get
+跳转时传递的值可用Requset["name"]取得
+元素不加 runat="server" 属性 则会当作普通文本,在服务器上进行处理
+asp:RadioButtonList 单选
+asp:CheckBoxList 多选
+asp:DropDownList 下拉框
+asp:Listbox 
+支持数据绑定<asp:ListItem/>
+可以用ArrayList Hashtable SortedList xml文件绑定数据
+ArrayList Hashtable SortedList
+var v = new ArrayList/Hashtable/SortedList()
+v.add()
+this.asp:对应标签id.DataSource = v
+this.asp:对应标签id.DataBind()
+xml文件
+var x = new DataSet()
+x.ReadXml(MapPath(xmlname))
+this.asp:对应标签id.DataSource = x
+.
+.
+.
+this.asp:对应标签id.DataBind()

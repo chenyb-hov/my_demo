@@ -1,0 +1,57 @@
+
+.ngtitle{
+  margin:auto;
+  text-align:center;
+  width: 90%;
+  height:30px;
+  line-height: 30px;
+}
+.ngcontent{
+  width: 90%;
+  margin-top: 5px;
+  margin:auto;
+}
+.nglist{
+  width: 100%;
+  height: 150px;
+  border-top: 1px solid #cdcdcd;
+  display: inline-block;
+}
+.ngimg{
+  margin-top: 10px;
+  height:100px;
+  width: 100%;
+  background-color: palegoldenrod;
+  
+}
+.ngye{
+  float: left;
+  display: inline-block;
+  line-height: 30px;
+  height: 30px;
+  color: rgb(255, 153, 0);
+  margin-top: 5px;
+}
+.ngsy{
+  margin-top: 5px;
+  display: inline-block;
+  height: 30px;
+  width: 50px;
+  background-color:rgb(243, 100, 18);
+  text-align: center;
+  color: white;
+  float: right;
+}
+.ngsy:hover{
+  background-color: orangered;
+  color: black;
+}
+button:not([size='mini']){
+  width: 60px;
+  min-height: 0;
+}
+button{
+  padding:0;
+  height: 30px;
+  line-height: 30px;
+}

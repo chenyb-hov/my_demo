@@ -1,0 +1,33 @@
+<view>
+  <scroll-view class="good-img">
+    <image></image>
+    <image></image>
+    <image></image>
+    <image></image>
+    <image></image>
+  </scroll-view>
+  <view class="good-name">{{item.name}}</view>
+  <view class="good-prices">
+    <view class="good-price">￥{{item.price}}.00</view><view class="good-rprice">￥{{item.rprice}}.00</view>
+  </view>
+  <view class="good-ms">
+    <view class="good-msnr">{{item.ms}}</view>
+  </view>
+  <view class = "good-comments">
+    <view wx:for="{{comments}}" wx:if="{{item.id==id}}">
+      <view class = "good-comment" wx:if="{{item.id==id}}">
+        <view class = "good-comment-uname">{{item.nickName}}</view>
+        <view class = "good-comment-uimg">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class = "good-comment-content">{{item.comment}}</view>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:61px"></view>
+  <view class="good-bot">
+    <view class="good-collection" bindtap="oncollection" data-gid="{{item.id}}">收藏</view>
+    <view class="good-addcart" bindtap="addsc" data-gid="{{item.id}}">加入购物车</view>
+    <view class="good-may" bindtap="gomay" data-gid="{{item.id}}">立即购买</view>
+  </view>
+</view>

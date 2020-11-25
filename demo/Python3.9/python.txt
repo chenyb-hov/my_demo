@@ -1,0 +1,212 @@
+创建类
+class ClassName:
+属性
+proper = 1
+构造方法
+def __init__(实例,参数,参数):   实例化时只需填属性
+	实例.参数 = 参数
+	类.属性 = 2
+print "total %d" % 属性
+打印 total 属性
+del 删除属性
+hasattr(对象,属性)如果存在属性则返回true
+get 取值
+set 改值
+del 删除
+__dict__ : 类的属性（包含一个字典，由类的数据属性组成）
+__doc__ :类的文档字符串
+__name__: 类名
+__module__: 类定义所在的模块（类的全名是'__main__.className'，如果类位于一个导入模块mymod中，那么className.__module__ 等于 mymod）
+__bases__ : 类的所有父类构成元素（包含了一个由所有父类组成的元组）
+if __name__ == "__main__": 主函数
+继承
+class child(parent)
+运算符重载
+def __add__(self,other):
+类属性与方法
+前面+__私有
+访问私有属性用对象._类名+私有方法
+_子类访问父类
+__xx__特殊方法,一般是系统定义名字
+正则表达式
+首先import re
+re.match('www', 'www.runoob.com').span()在起始位置匹配(不加.span()则在不在起始)
+re.search(正则表达式,字符串,标志位)
+group()匹配的整个表达式的字符串
+groups()返回一个包含所有小组字符串的元组，从 1 到 所含的小组号。
+re.match与re.search的区别
+re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配。
+re.sub(正则表达式,替换字符串,原始字符串)
+re.compile(正则表达式,匹配模式)
+供 match() 和 search() 这两个函数使用
+findall(待匹配字符串,起始位置,结束位置)
+在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表。
+注意： match 和 search 是匹配一次 findall 匹配所有。
+re.finditer(正则表达式,匹配字符串,标志位)
+在字符串中找到正则表达式所匹配的所有子串，并把它们作为一个迭代器返回。
+re.split(正则表达式,匹配字符串,分隔次数,标志位)
+按照能够匹配的子串将字符串分割后返回列表
+正则表达式对象
+re.RegexObject
+re.compile() 返回 RegexObject 对象。
+re.MatchObject
+group() 返回被 RE 匹配的字符串。
+start() 返回匹配开始的位置
+end() 返回匹配结束的位置
+span() 返回一个元组包含匹配 (开始,结束) 的位置
+re.I 匹配对大小写不敏感
+re.M多行匹配,影响^$
+re.S匹配包括行在内的所有字符
+re.U根据Unicode字符集解析字符
+^字符串开头
+$字符串结尾
+.除了/之外的任意字符
+[]中括号内的字符
+[^]除了中括号内的字符
+*0或多个
++1或多个
+?0或1个
+{n}n个
+{n,}至少n个
+{n,m}n-m个
+|或
+()分组
+(?#..)注释
+\w匹配字母数字和下划线
+\W与\w相反
+\s匹配任意空白字符
+\S与\s相反
+\d任意数字
+\D任意非数字
+\A匹配字符串开始
+\Z匹配字符串结束,若存在\n则匹配\n前结束字符
+\z匹配字符串结束
+\G匹配最后匹配完成的位置
+\b匹配一个单词边界
+\B匹配非单词边界
+\n换行
+\t水平制表
+\1匹配第一个分组
+操作MySQL
+安装版本2.x pip install MySQLdb
+版本3.x https://pypi.org/project/mysqlclient/#files
+pip install mysqlclient-1.3.14-cp37-cp37m-win_amd64.whl
+安装完成后
+import MySQLdb
+db = MySQLdb.connet("localhost","test","password","TESTDB",charset="utf-8")连接数据库
+cursor = db.cursor()获取操作游标
+cursor.execute(sql)执行sql语句
+db.commit()提交到数据库执行
+db.close()关闭连接数据库
+results = cursor.fetchall()获取所有记录列表
+commit()方法游标的所有更新操作，rollback（）方法回滚当前游标的所有操作。
+网络编程 服务器端
+import socket 导入模块
+s = socket.socket() 实例化
+host = socket.gethostname() 获取本地主机名
+port = 12345 设置端口号
+s.bind((host,port)) 绑定端口
+s.listen(5) 等待客户端连接
+c = s.accept() 建立客户端连接
+c.send("给客户端发送消息")
+客户端
+import socket 
+s = socket.socket()
+host = socket.gethostname()
+port  = 12345
+s.connect((host,port))
+s.recv(1024)接受服务器端消息
+协议	功能用处	端口号	Python 模块
+HTTP	网页访问	80	httplib, urllib, xmlrpclib
+NNTP	阅读和张贴新闻文章，俗称为"帖子"	119	nntplib
+FTP	文件传输	20	ftplib, urllib
+SMTP	发送邮件	25	smtplib
+POP3	接收邮件	110	poplib
+IMAP4	获取邮件	143	imaplib
+Telnet	命令行	23	telnetlib
+Gopher	信息查找	70	gopherlib, urllib
+多线程
+import thread
+def print_time(threadname,delay):
+	count = 0
+	while count<5:
+		time.sleep(delay)
+		count+=1
+		print "%s: %s" % (threadname,time.ctime(time.time()))
+创建线程
+thread.start_new_thread(print_time,("Thread-1",2,))
+thread.start_new_thread(print_time,("Thread-2",4,))
+
+threading.currentThread(): 返回当前的线程变量。
+threading.enumerate(): 返回一个包含正在运行的线程的list。正在运行指线程启动后、结束前，不包括启动前和终止后的线程。
+threading.activeCount(): 返回正在运行的线程数量，与len(threading.enumerate())有相同的结果。
+除了使用方法外，线程模块同样提供了Thread类来处理线程，Thread类提供了以下方法:
+
+run(): 用以表示线程活动的方法。
+start():启动线程活动。
+join([time]): 等待至线程中止。这阻塞调用线程直至线程的join() 方法被调用中止-正常退出或者抛出未处理的异常-或者是可选的超时发生。
+isAlive(): 返回线程是否活动的。
+getName(): 返回线程名。
+setName(): 设置线程名。
+
+import threading
+import time
+class myThread(threading.Thread):
+	def __init__(self,threadID,name,counter):
+		threading.Thread.__init__(self)
+		self.threadID = threadID
+		self.name = name
+		self.counter = counter
+	def run(self):
+		print "start" + self.name
+		print_time(self.name,self.counter,5)
+		print "end" + self.name
+def print_time(threadName,delay,counter):
+	while counter:
+		if exitFlag:
+			(threading.Thread).exit()
+		time.sleep(delay)
+		print "%s %s" % (threadName,time.ctime(time.time()))
+		count -=1
+thread1 = myThread(1,"Thread-1",1)
+thread2 = myThread(2,"Thread-2",2)
+thread1.start()
+thread2.start()
+GUI
+Tkinter 2.x版本导入Tkinter 3.x导入tkinter
+import tkinter
+top = Tkinter.Tk()
+top.mainloop() 进入消息循环
+
+root = Tk()
+listb = Listbox(root) 创建列表组件
+listb.pack() 将小部件放置到主窗口中
+Tkinter组件
+Button	按钮控件；在程序中显示按钮。
+Canvas	画布控件；显示图形元素如线条或文本
+Checkbutton	多选框控件；用于在程序中提供多项选择框
+Entry	输入控件；用于显示简单的文本内容
+Frame	框架控件；在屏幕上显示一个矩形区域，多用来作为容器
+Label	标签控件；可以显示文本和位图
+Listbox	列表框控件；在Listbox窗口小部件是用来显示一个字符串列表给用户
+Menubutton	菜单按钮控件，用于显示菜单项。
+Menu	菜单控件；显示菜单栏,下拉菜单和弹出菜单
+Message	消息控件；用来显示多行文本，与label比较类似
+Radiobutton	单选按钮控件；显示一个单选的按钮状态
+Scale	范围控件；显示一个数值刻度，为输出限定范围的数字区间
+Scrollbar	滚动条控件，当内容超过可视化区域时使用，如列表框。.
+Text	文本控件；用于显示多行文本
+Toplevel	容器控件；用来提供一个单独的对话框，和Frame比较类似
+Spinbox	输入控件；与Entry类似，但是可以指定输入范围值
+PanedWindow	PanedWindow是一个窗口布局管理的插件，可以包含一个或者多个子控件。
+LabelFrame	labelframe 是一个简单的容器控件。常用与复杂的窗口布局。
+tkMessageBox	用于显示你应用程序的消息框。
+属性
+Dimension 控件大小
+Color 控件颜色
+Font 字体
+Anchor 描点
+Relief 控件样式
+Bitmap 位图
+Cursor 光标
+grid() 网格  place()  位置

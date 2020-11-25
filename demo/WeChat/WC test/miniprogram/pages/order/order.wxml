@@ -1,0 +1,18 @@
+<view>
+  <view class="order-til" style="position:fixed;background:white;z-index:100;width:100%">order</view>
+  <view style="width:100%;height:41px"></view>
+  <view class="order-content">
+    <view wx:for="{{orders}}" class="order">
+      <view style="height:20px" wx:if="{{item.comment}}">
+        <text class="iconfont icon-edit-square order-comment" data-oid="{{index}}" bindtap="gopl"></text>
+      </view>
+      <view wx:for = "{{item.data}}" style="position:relative;margin-bottom:10px">
+        <view class="order-img"></view>
+        <view class="order-name">{{item.name}}</view>
+        <view class="order-money">金额: ￥{{item.price * item.num}}.00</view>
+        <view class="order-num">数量: {{item.num}}</view>
+      </view>
+      <view class = "order-moneys">总计: ￥{{item.moneys}}.00</view>
+    </view>
+  </view>
+</view>

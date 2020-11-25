@@ -1,0 +1,145 @@
+跨域
+表单可以跨域
+ajax不配置的话不行
+
+元素平移
+
+1.绝对定位 用js代码+定时器
+2.CSS3 animation动画
+3.CSS3 transform:translate+transition
+4.js 控制margin+定时器
+
+JQuery
+
+$(document).ready(function(){}) 相当于window.onload
+选择器
+元素选择器 例如 $("p") $("p:first") $("ul li:first-child") 	$("tr:even")偶数tr $("tr:odd")奇数tr 	$("ul li:eq(3)") 第四个li  $("ul li:gt(3)") 索引大于3的li  $("ul li:lt(3)")索引小于3的li  $(":header")所有h1,h2等标题元素
+#id 选择器 例如 $("#test") 
+.class 选择器 例如 $(".test") $("p.intro") $(".intro,.demo")
+通配符选择器 例如 $("*")
+属性选择器 例如 $("[href]") $("a[target='_blank']")
+子元素选择器 $("#id>.classname ")
+后代元素选择器 $("#id .classname ") 
+紧邻下一个元素选择器 $("#id + .classname ")
+兄弟元素选择器 $("#id ~ .classname ")
+过滤选择器 $("li:first")   $("li:first")    $("div:contains('Runob')")  $("div[id='123']") $("input:checked")
+
+事件
+.click(); 点击事件
+.mouseleave(); 当鼠标指针离开元素
+.mousedown(); 当鼠标指针移动到元素上方
+.mouseup() 当在元素上松开鼠标按钮
+.hover() 模拟光标悬停事件
+.focus() 获得焦点时
+.blur() 失去焦点
+$(this).hide() - 隐藏当前元素
+.show(); 显示当前元素
+.toggle(); 用 toggle() 方法来切换 hide() 和 show() 方法
+.fadeIn(时长,函数);淡入已隐藏的元素。
+.fadeOut(); 淡出可见元素。
+.fadeToggle(); fadeToggle() 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换
+.fadeTo(时长,不透明度,函数);允许渐变为给定的不透明度（值介于 0 与 1 之间）时长 "slow"、"fast" 或毫秒
+.slideDown(时长,函数); 用于向下滑动元素
+.slideUp(时长,函数); 用于向上滑动元素
+.slideToggle(时长,函数);  slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换
+.animate(CSS 属性,时长,函数); 创建自定义动画 样式 使用相对值+= 或 -=
+.stop() 停止动画或效果
+.text() 设置或返回所选元素的文本内容 相当于innerText
+.html() 设置或返回所选元素的内容 相当于innerHTML
+.val() 设置或返回表单字段的值
+.attr() 设置或获取属性值 键值对多个用逗号隔开
+元素选择
+.append() 结尾插入元素或文本
+.prepend() 开头插入元素或文本
+.after() 在被选元素之后插入文本或元素
+.before()  在被选元素之前插入文本或元素
+.remove() 删除被选元素（及其子元素）参数条件过滤
+.empty() 从被选元素中删除子元素
+.addClass() 向被选元素添加一个或多个类
+.removeClass() 从被选元素删除一个或多个类
+.toggleClass() 对被选元素进行添加/删除类的切换操作
+.css() 设置或返回样式属性 键值对,多个逗号隔开
+.width()方法设置或返回元素的宽度（不包括内边距、边框或外边距）
+.height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）
+.innerWidth() 方法返回元素的宽度（包括内边距）
+.innerHeight() 方法返回元素的高度（包括内边距）
+.outerWidth() 方法返回元素的宽度（包括内边距和边框）
+.outerHeight() 方法返回元素的高度（包括内边距和边框）
+.parent() 返回被选元素的直接父元素
+.parents() 返回被选元素的所有祖先元素
+.parentsUntil()  返回介于两个给定元素之间的所有祖先元素
+.children() 返回被选元素的所有直接子元素
+.find() 方法返回被选元素的后代元素
+.siblings()返回被选元素的所有同胞元素。
+.next() 方法返回被选元素的下一个同胞元素。
+nextAll() 方法返回被选元素的所有跟随的同胞元素。
+.nextUntil() 返回介于两个给定参数之间的所有跟随的同胞元素。
+.first()返回被选元素的首个元素。例 $("div p").first();
+.last() 方法返回被选元素的最后一个元素。
+.eq() 方法返回被选元素中带有指定索引号的元素。
+.filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。
+.not() 方法返回不匹配标准的所有元素。 与filter相反
+AJAX
+.load(URL,data,函数)
+$.get(URL,函数);
+$.post(URL,data,函数);
+$.ajax({}) 执行异步 AJAX 请求
+其他
+$.noConflict() 方法会释放对 $ 标识符的控制，这样其他脚本就可以使用它了。变量代替$
+JSONP
+设置服务器端
+例 header('Content-type: application/json');
+    $jsoncallback = htmlspecialchars($_REQUEST ['jsoncallback']);
+    $json_data = '["customername1","customername2"]';
+    echo $jsoncallback . "(" . $json_data . ")";
+客户端
+例 function callbackFunction(result, methodName){}
+<script type="text/javascript" src="https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=callbackFunction">
+杂项方法
+.data() 向被选元素附加数据，或者从被选元素获取数据
+.each(函数) 为每个匹配元素执行函数 同js foreach
+.get(index) 获取由选择器指定的 DOM 元素
+.index() 方法返回指定元素相对于其他指定元素的 index 位置。 如果未找到元素，index() 将返回 -1
+$.noConflict() 释放变量 $ 的 jQuery 控制权
+$.param() 创建数组或对象的序列化表示形式（可在生成 AJAX 请求时用于 URL 查询字符串中）
+$.contains() 判断另一个DOM元素是否是指定DOM元素的后代
+$.extend() 将一个或多个对象的内容合并到目标对象
+$.inArray() 在数组中查找指定值并返回它的索引值（如果没有找到，则返回-1）
+$.isArray() 判断指定参数是否是一个数组
+$.isFunction() 判断指定参数是否是一个函数
+$.isNumeric() 判断指定参数是否是一个数字值
+$.map() 指定函数处理数组中的每个元素(或对象的每个属性)，并将处理结果封装为新的数组返回
+$.now() 返回当前时间
+$.parseJSON() 将符合标准格式的JSON字符串转为与之对应的JavaScript对象
+$.trim() 去除字符串两端的空白字符
+遍历方法
+add() 把元素添加到匹配元素的集合中
+closest() 返回被选元素的第一个祖先元素
+contents() 返回被选元素的所有直接子元素（包含文本和注释节点）
+each() 为每个匹配元素执行函数
+eq() 返回带有被选元素的指定索引号的元素
+has() 返回拥有一个或多个元素在其内的所有元素
+is() 根据选择器/元素/jQuery 对象检查匹配元素集合，如果存在至少一个匹配元素，则返回 true 例$("p").parent().is("div")
+map() 把当前匹配集合中的每个元素传递给函数，产生包含返回值的新 jQuery 对象
+offsetParent() 返回第一个定位的父元素
+prev() 返回被选元素的前一个同级元素
+prevAll() 返回被选元素之前的所有同级元素
+prevUntil() 返回介于两个给定参数之间的每个元素之前的所有同级元素
+slice() 把匹配元素集合缩减为指定范围的子集
+
+canvas画布
+
+每一帧都执行requestAnimationFrame()
+
+js 事件监听
+元素内部属性
+脚本内部 元素.onclick
+元素.addEventListener(事件名,函数,bol)最后一个参数true 捕获 false 冒泡
+阻止冒泡取消默认行为
+e.stopPropagation() 阻止冒泡
+e.preventDefault() 取消默认事件
+
+获取json属性个数
+Object.keys(myObject).length
+json属性为动态变量
+json[变量]

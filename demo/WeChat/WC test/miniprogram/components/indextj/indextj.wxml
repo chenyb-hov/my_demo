@@ -1,0 +1,21 @@
+<view class="container">
+  <view class = "tj-til">
+    <view class="tj-tilview"><text class="tj-tiltext">Goods</text></view>
+    <view class="tj-select">
+      <text class="iconfont icon-icon-test1 search" bindtap="onsearch"></text>
+      <input bindinput="getinputvalue" class="tj-input" placeholder="请输入关键字搜索"/></view>
+  </view>
+  <view style="height:40px;width:100%"></view>
+  <view class = "tj-hr"></view>
+  <view class = "tj-goods">
+    <view class= "tj-good" wx:for="{{items}}">
+      <view class = "tj-goodimg" data-goodid="{{item.id}}" bindtap="gogood"><image class="tjgood-image"></image></view>
+      <view class = "tj-goodname">{{item.name}}</view>
+      <view class = "tj-goodms">{{item.ms}}</view>
+      <view class = "tj-goodrprice">￥{{item.rprice}}.00</view>
+      <view class = "tj-goodprice">￥{{item.price}}.00</view>
+      <view class = "tj-goodshopcart" data-id="{{item.id}}" bindtap="addshopcart">加入购物车<view animation="{{animation}}" class="anim" wx:if="{{item.cirle}}"></view>
+      </view>
+    </view>
+  </view>
+</view>

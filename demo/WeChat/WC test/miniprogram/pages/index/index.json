@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "now-get":"../../components/nowget/nowget",
+    "can-get":"../../components/canget/canget",
+    "index-sy":"../../components/indexsy/indexsy",
+    "index-tj":"../../components/indextj/indextj",
+    "index-my":"../../components/indexmy/indexmy",
+    "index-xx":"../../components/indexxx/indexxx"
+  }
+  
+}

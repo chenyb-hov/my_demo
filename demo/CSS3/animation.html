@@ -1,0 +1,154 @@
+<html>
+<head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.div1{
+			width:100px;
+			height:100px;
+			background:red;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		.div2{
+			width:100px;
+			height:100px;
+			background:blue;
+			position:absolute;
+			left:0;
+			top:130;
+		}
+		.div3{
+			width:100%;
+			height:100px;
+			position:relative;
+			margin-top:260px;
+		}
+		.div3:hover>.div4{
+			animation:mymove 2s linear;
+		}
+		@keyframes mymove
+		{
+			from {left:0px; }
+			to {left:1000px; border-radius:50%;}
+		}
+		.div4{
+			width:100px;
+			height:100px;
+			background:green;
+			position:absolute;
+			left:0;
+			top:0;
+		}
+		.div5_1{
+			width:100%;
+			height:100px;
+			position:relative;
+			margin-top:30px;
+		}
+		.div5{
+			width:100px;
+			height:100px;
+			background:yellow;
+			position:absolute;
+			left:0;
+			top:0px;
+			transition:linear 2s;
+		}
+		.div5_1:hover>.div5{
+			transform:translate(1000px);
+		}
+		.div6{
+			width:100px;
+			height:100px;
+			background:pink;
+			position:absolute;
+			left:0;
+			top:520px;
+			animation:mymove 3s  infinite;
+			border-radius:50%;
+		}
+		.div7{
+			width:100px;
+			height:100px;
+			background:rgb(29,243,76);
+			position:absolute;
+			top:650px;
+			left:0;
+			border-radius:50px;
+		}
+		.div7:hover{
+			animation:mymove1 3s  infinite;
+		}
+		@keyframes mymove1
+		{
+			from {width:100px;
+			background:rgb(29,243,76);}
+			to {width:1000px;
+			background:rgb(129,43,176);}
+		}
+		.div8{
+			width:100px;
+			height:100px;
+			background:rgb(96,172,139);
+			position:relative;
+			top:0px;
+			left:0;
+			margin-top:280px;
+			border-radius:50px;
+		}
+		@keyframes mymove2
+		{
+			from {width:100px;
+			background:rgb(96,172,139);}
+			to {width:1000px;
+			background:rgb(200,16,78);}
+		}
+		.div8:hover{
+			animation:mymove2 3s  infinite;
+		}
+		.div9{
+			position:absolute;
+			width:50px;
+			height:50px;
+			background:white;
+			top:25px;
+			right:25px;
+			border-radius:25px;
+		}
+	</style>
+</head>
+<body>
+	<div class = "div1" onclick = "goright()"></div>
+	<div class = "div2" onclick = "anim()"></div>
+	<div class = "div3" onmouse><div class = "div4"></div></div>
+	<div class = "div5_1"><div class = "div5"></div></div>
+	<div class = "div6"></div>
+	<div class = "div7"></div>
+	<div class=  "div8"><div class = "div9"></div></div>
+	<script>
+		function getdom(name){
+			return document.getElementsByClassName(name)[0]
+		}
+		function goright(){
+			var div1 = document.getElementsByClassName("div1")[0]
+			
+			console.log(parseInt(div1.style.left) + 50)
+			if(Number(div1.style.left) !=0){
+			div1.style.left =parseInt(div1.style.left) + 1000 +'px';}else{div1.style.left=1000}
+
+		}
+		function anim(){
+			var div2 = getdom("div2");
+			div2.style.left = 25;
+			setInterval(function(){
+				if(Number(div2.style.left) !=0&&parseInt(div2.style.left) <1000){
+			div2.style.left =parseInt(div2.style.left) + 25 +'px';}
+			},30)
+		}
+	</script>
+</body>
+</html>

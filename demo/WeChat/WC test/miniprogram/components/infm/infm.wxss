@@ -1,0 +1,42 @@
+page{
+  background-color: #dfdfdf;
+}
+.infm-header{
+  width:100%;
+  height: 90px;
+  position: relative;
+  background-color: #dfdfdf;
+}
+.infm-img{
+  margin-top:10px;
+  margin-left:10px;
+  width: 70px;
+  height: 70px;
+}
+.infm-name{
+  position: absolute;
+  right:10px;
+  top:33px;
+  font-size: 18px;
+}
+.infm-hr{
+  width: 100%;
+  height:8px;
+  background-color: #ababab;
+}
+.infm-div{
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  position: relative;
+  background-color: #dfdfdf;
+}
+.infm-text{
+  position: absolute;
+  left: 10px;
+}
+.infm-address{
+  width: 100px;
+  display: inline-block;
+  margin-left: 100px;
+}

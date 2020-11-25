@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="ngtitle">title</view>
+  <view class="ngcontent">
+    <view class = "nglist" wx:for="{{lika}}">
+      <view class="ngimg"></view>
+      <text class="ngye">余额: {{item.money}}.00</text>
+      <button open-type="share" class="ngsy" bindtap="onShareAppMessage">赠送</button>
+    </view>
+  </view>
+</view>

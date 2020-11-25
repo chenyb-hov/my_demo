@@ -1,0 +1,141 @@
+@import "../../app.wxss";
+.shopcart-til{
+  width: 100%;
+  height: 40px;
+  color: red;
+  line-height: 40px;
+  font-size: 18px;
+  position: fixed;
+  background-color: white;
+  z-index: 100;
+}
+.shopcart-tiltext{
+  display: inline-block;
+  margin-left: 10px;
+}
+.shopcart-cle{
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  font-size: 18px;
+  color:orangered;
+}
+.shopcart-hr{
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.shopcart-goods{
+  width: 100%;
+  margin-top: 10px;
+}
+.shopcart-good{
+  padding-left: 10px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  height: 140px;
+  position: relative;
+  margin-top: 10px;
+}
+.shopcart-gimg{
+  background-color: orange;
+  width: 200px;
+  height: 120px;
+}
+.shopcart-gname{
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  left: 220px;
+  top:10px;
+  height: 26px;
+  overflow: hidden;
+}
+.shopcart-gms{
+  color: #888888;
+  position: absolute;
+  font-size: 14px;
+  left: 220px;
+  top:40px;
+}
+.shopcart-gprice{
+  color: red;
+  font-size: 18px;
+  position: absolute;
+  left: 220px;
+  top:65px;
+}
+.shopcart-gnum{
+  position: absolute;
+  width: 120px;
+  height: 22px;
+  left: 220px;
+  top:95px;
+  font-size:20px;
+  line-height: 22px;
+}
+.shopcart-greduce{
+  display: inline-block;
+  text-align: center;
+  font-size:22px;
+  line-height: 22px;
+  color: #888888;
+  margin-right: 12px;
+}
+.shopcart-gadd{
+  margin-right: 0px;
+  margin-left: 12px;
+}
+.shopcart-k{
+  text-align: center;
+  font-size: 36px;
+  color: #888888;
+}
+.shopcart-may{
+  position: fixed;
+  bottom: 60px;
+  height: 60px;
+  width: 100%;
+  background-color: #ededed;
+}
+.shopcart-maybox{
+  float: right;
+  display: inline-block;
+  height: 40px;
+  margin-top:10px;
+  margin-right: 10px;
+}
+.shopcart-sum{
+  display: inline-block;
+  height: 40px;
+  color: orangered;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.shopcart-zero{
+  color: #666666;
+}
+.shopcart-js{
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  background-color: #666666;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  color: black;
+}
+.shopcart-js1{
+  background-color: #15f80e;
+  font-weight: bold;
+  color:white;
+  font-size: 18px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
