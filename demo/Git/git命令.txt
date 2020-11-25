@@ -1,0 +1,67 @@
+git init newgit
+git add .
+git add README
+git add commit -m ''
+git clone url
+git branch branchname
+git checkout branchname
+git merge
+cd ..
+touch README
+ls
+echo 'neirong' > a.txt
+git checkout -b branchname
+git rm a.txt
+git branch -d branchname
+git diff
+git log
+git tag -a version
+git remote add origin url
+git remote -v
+git fetch
+git push origin master
+git remote rm origin
+
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-devel
+yum install git
+groupadd git
+useradd git -g git
+cd /home/git/
+mkdir .ssh
+chmod 755 .ssh
+touch .ssh/authorized_keys
+chmod 644 .ssh/authorized_keys
+cd /home
+mkdir gitrepo
+chown git:git gitrepo/
+cd gitrepo
+git init --bare runoob.git
+chown -R git:git runoob.git
+git clone git@192.168.45.4:/home/gitrepo/runoob.git
+
+
+
+mkdir learngit  创建文件夹
+cd learngit  进入文件夹
+pwd  显示当前目录
+git init 创建仓库
+git add .  目录下所有文件添加到仓库
+git commit -m "备注"  提交上一步的文件到仓库
+
+git status 查看当前仓库状态
+git diff file 查看文件被修改记录
+
+git log 查看日志
+git log --pretty=oneline 查看简洁版日志
+git reset --hard HEAD^ 版本回退
+cat file   查看文件内容
+git reset --hard id   版本回退或前进 id是git log --pretty=oneline查出来的可以不写全
+git reflog   查看操作日志包括版本id
+git restore -- file   添加add到暂存区但未提交 从暂存区删除并且撤销修改
+git retore file  修改后但未添加到暂存区,撤销修改 git status 可根据提示
+git reset HEAD file   添加到暂存区未提交的 从暂存区删除
+rm file   删除已提交文件
+git rm file  从版本库删除上面已删除的文件, 删除后提交版本
+git restore file   恢复误删的文件rm 
+git remote add origin giturl  连接远程仓库
+git push -u origin master  把本地仓库推送到远程仓库
