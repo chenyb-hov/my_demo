@@ -102,7 +102,11 @@ git stash
 <<<<<<< HEAD
 =======
 git stash apply stash@{0}  恢复指定现场
-git cherry-pick 提交版本    复制一个特点提交到当前分支
+git cherry-pick 提交版本    复制一个提交到当前分支
+git branch -D 分支    强制删除分支(未合并的)
+git remote 查看远程库
+git remote -v 查看远程库信息
+git checkout -b dev origin/dev  创建本地dev分支
 >>>>>>> dev
 >>>>>>> Stashed changes
 >>>>>>> e97fc73... upd bug+
