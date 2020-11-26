@@ -96,7 +96,18 @@ git log --graph --pretty=oneline --abbrev-commit 提交日志
 git rebase 把本地未push的提交整理成一条直线
 =======
 >>>>>>> branch1
-
+git tag v1.0 添加标签
+git tag  查看标签
+git tag v1.0 提交版本   添加提交版本标签
+git show v0.9查看标签信息
+git tag -a v0.1 -m "version 0.1 released" 1094adb  添加有说明的标签 -a 标签名 -m 内容
+git tag -d v0.1  删除标签
+git push origin v1.0  推送标签到远程
+git push origin  --tags  推送所有未推到远程的本地标签
+git push origin :refs/tags/v0.9  删除远程标签 要先删本地
+https://github.com/github/gitignore  忽略特殊文件 *所有 !非
+git add -f file  强制添加文件
+git check-ignore -v file 检查.gitignore规则
 git config --global color.ui true 自定义 颜色显示
 
 退出git log 按q
