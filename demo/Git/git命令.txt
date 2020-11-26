@@ -109,6 +109,11 @@ https://github.com/github/gitignore  忽略特殊文件 *所有 !非
 git add -f file  强制添加文件
 git check-ignore -v file 检查.gitignore规则
 git config --global alias.st status  配置别名git at => git status
+git config --global alias.unstage 'reset HEAD'  git unstage =>git reset HEAD
+git config --global alias.last 'log -1'   git last显示最后一次提交
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"     git lg 查看提交历史
+cat .git/config  查看自定义别名仅对当前仓库不加--global
+git config --gloabl --list  查看用户自定义别名
 git config --global color.ui true 自定义 颜色显示
 
 退出git log 按q
