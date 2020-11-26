@@ -92,7 +92,10 @@ git checkout -b dev origin/dev  创建本地dev分支
 git pull 抓取最新提交分支
 git branch --set-upstream-to=origin/dev dev  设置本地dev分支与远程dev分支的链接
 git log --graph --pretty=oneline --abbrev-commit 提交日志
+<<<<<<< HEAD
 git rebase 把本地未push的提交整理成一条直线
+=======
+>>>>>>> branch1
 
 git config --global color.ui true 自定义 颜色显示
 
