@@ -77,7 +77,7 @@ git branch -d dev  删除分支
 git switch -c dev 创建dev分支并切到dev分支
 git switch dev 切到dev分支
 git log --graph --pretty=oneline --abbrev-commit  查看合并情况
-
+git merge --no-ff -m "merge with no-ff" dev  准备合并dev分支禁用fast forward
 git config --global color.ui true 自定义 颜色显示
 
 退出vim 一直按住esc ，再连续按大写的z两次。
