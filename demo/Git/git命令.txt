@@ -79,50 +79,18 @@ git switch dev 切到dev分支
 git log --graph --pretty=oneline --abbrev-commit  查看合并情况
 git merge --no-ff -m "merge with no-ff" dev  准备合并dev分支禁用fast forward 默认不禁用
 git stash  储存现场
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> e97fc73... upd bug+
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> issue-101
 git stash list  查看现场
-<<<<<<< HEAD
 git stash apply  恢复现场
 git stash drop  删除现场
 git stash pop  恢复并删除现场
-=======
->>>>>>> dev
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-git stash
->>>>>>> dev
-=======
-git stash
-=======
-<<<<<<< HEAD
-=======
 git stash apply stash@{0}  恢复指定现场
 git cherry-pick 提交版本    复制一个提交到当前分支
 git branch -D 分支    强制删除分支(未合并的)
 git remote 查看远程库
 git remote -v 查看远程库信息
 git checkout -b dev origin/dev  创建本地dev分支
->>>>>>> dev
->>>>>>> Stashed changes
->>>>>>> e97fc73... upd bug+
->>>>>>> dev
-=======
-=======
-git stash apply stash@{0}  恢复指定现场
->>>>>>> dev
->>>>>>> Stashed changes
->>>>>>> issue-101
+git pull 抓取最新提交分支
+git branch --set-upstream-to=origin/dev dev  设置本地dev分支与远程dev分支的链接
 
 git config --global color.ui true 自定义 颜色显示
 
