@@ -86,7 +86,7 @@ git stash drop  删除现场
 git stash pop  恢复并删除现场
 =======
 >>>>>>> dev
-git 
+git stash
 
 git config --global color.ui true 自定义 颜色显示
 
