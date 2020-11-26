@@ -80,10 +80,15 @@ git log --graph --pretty=oneline --abbrev-commit  查看合并情况
 git merge --no-ff -m "merge with no-ff" dev  准备合并dev分支禁用fast forward 默认不禁用
 git stash  储存现场
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< Updated upstream
 =======
 >>>>>>> e97fc73... upd bug+
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> issue-101
 git stash list  查看现场
 <<<<<<< HEAD
 git stash apply  恢复现场
@@ -91,6 +96,7 @@ git stash drop  删除现场
 git stash pop  恢复并删除现场
 =======
 >>>>>>> dev
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -111,6 +117,12 @@ git checkout -b dev origin/dev  创建本地dev分支
 >>>>>>> Stashed changes
 >>>>>>> e97fc73... upd bug+
 >>>>>>> dev
+=======
+=======
+git stash apply stash@{0}  恢复指定现场
+>>>>>>> dev
+>>>>>>> Stashed changes
+>>>>>>> issue-101
 
 git config --global color.ui true 自定义 颜色显示
 
